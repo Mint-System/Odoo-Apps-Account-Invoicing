@@ -11,7 +11,7 @@
     'version': '14.0.1.0.1',
     'license': 'AGPL-3',
 
-    'depends': ['base', 'account'],
+    'depends': ['account'],
 
     'data': [
         'views/report_invoice_document.xml',
