@@ -9,7 +9,6 @@ class AccountMoveLine(models.Model):
     position = fields.Integer("Pos", compute='_compute_get_position')
 
     def _compute_get_position(self):
-        _logger.warning(self)
         for rec in self:
             if rec.sale_line_ids:
                 rec.position = rec.sale_line_ids[0].position
