@@ -8,7 +8,7 @@ class SaleOrder(models.Model):
 
     def _create_invoices(self, grouped=False, final=False, date=None):
         moves = super()._create_invoices(grouped=grouped, final=final, date=date)
-        invoice_cash_rounding_id = self.env['ir.default'].get_model_defaults('account.move',condition='move_type=out_invoice')['invoice_cash_rounding_id']
+        invoice_cash_rounding_id = self.env['ir.default'].get_model_defaults('account.move',condition='move_type=out_invoice').get('invoice_cash_rounding_id')
         if invoice_cash_rounding_id:
             moves.invoice_cash_rounding_id = invoice_cash_rounding_id
         # _logger.warning(["ADDED CASH ROUNDING", invoice_cash_rounding_id])
