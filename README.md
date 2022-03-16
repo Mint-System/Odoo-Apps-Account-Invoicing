@@ -19,3 +19,4 @@ git clone git@github.com:mint-system/odoo-apps-account-invoicing.git ./addons/ac
 | [account_move_line_position](account_move_line_position/)                 | Get line position from purchase or sale order.          |
 | [account_move_line_link_pickings](account_move_line_link_pickings/)       | Get linked pickings foreach account move line.          |
 | [sale_invoice_cash_rounding_default](sale_invoice_cash_rounding_default/) | Apply default cash rounding when invoicing sale orders. |
+| [account_move_reconciled_date](account_move_reconciled_date/)             | Show reconcile date of bank statement for account move. |

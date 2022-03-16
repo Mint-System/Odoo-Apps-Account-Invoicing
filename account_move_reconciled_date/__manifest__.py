@@ -1,15 +1,15 @@
 {
-    "name": "Account Move Line Link Pickings",
+    "name": "Account Move Reconciled Date",
     "summary": """
-        Get linked pickings foreach account move line.
+        Show reconcile date of bank statement for account move.
     """,
     "author": "Mint System GmbH, Odoo Community Association (OCA)",
     "website": "https://www.mint-system.ch",
     "category": "Accounting",
-    "version": "14.0.1.0.1",
+    "version": "14.0.1.2.0",
     "license": "AGPL-3",
-    "depends": ["account", "sale_stock"],
-    "data": ["views/view_move_form.xml"],
+    "depends": ["account"],
+    "data": ["views/view_invoice_tree.xml"],
     "installable": True,
     "application": False,
     "auto_install": False,

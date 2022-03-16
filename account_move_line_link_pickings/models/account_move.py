@@ -12,7 +12,7 @@ class AccountMoveLine(models.Model):
         for rec in self:
             picking_ids = []
 
-            _logger.warning(rec)
+            # _logger.warning(rec)
             for line in rec.sale_line_ids:
                 _logger.warning(line)
                 for move in line.move_ids:
