@@ -6,8 +6,9 @@ _logger = logging.getLogger(__name__)
 class AccountMove(models.Model):
     _inherit = 'account.move'
 
-    reconcile_date = fields.Date(compute='_compute_get_reconcile_date')
+    reconcile_date = fields.Date(compute='_compute_get_reconcile_date', store=True)
 
+    @api.depends('payment_state')
     def _compute_get_reconcile_date(self):
         for move in self:
             reconcilation_dates = []
