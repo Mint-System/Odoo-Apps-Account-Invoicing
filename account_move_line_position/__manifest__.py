@@ -8,10 +8,10 @@
     'author': 'Mint System GmbH, Odoo Community Association (OCA)',
     'website': 'https://www.mint-system.ch',
     'category': 'Accounting',
-    'version': '14.0.1.2.0',
+    'version': '14.0.1.3.0',
     'license': 'AGPL-3',
     
-    'depends': ['account', 'sale_order_line_position', 'purchase_order_line_position'],
+    'depends': ['account', 'sale_order_line_pos', 'purchase_order_line_position'],
 
     'data': [
         'views/view_move_form.xml',
