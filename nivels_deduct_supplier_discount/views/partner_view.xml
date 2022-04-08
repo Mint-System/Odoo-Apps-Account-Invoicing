@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_partner_form_supplier_discount" model="ir.ui.view">
+            <field name="name">res.partner.form.inherit.supplier.discount</field>
+            <field name="model">res.partner</field>
+            <field name="priority">15</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <group name="purchase" position="inside">
+                    <field name="discount_payment_term_id" options="{'no_create_edit': True}"/>
+                </group>
+            </field>
+        </record>
+    </data>
+</odoo>

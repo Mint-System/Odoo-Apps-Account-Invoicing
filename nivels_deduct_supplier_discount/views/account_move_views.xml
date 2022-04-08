@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="supplier_invoice_discount_form_inherit" model="ir.ui.view">
+        <field name="name">supplier.invoice.discount.form.inherit</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@id='header_right_group']/label[@for ='journal_id']" position="before">
+                <field name="discount_payment_term_id" options="{'no_create_edit': True}" attrs="{'invisible': [('move_type', '!=', 'in_invoice')]}"/>
+                <field name="discount_date" readonly="1" force_save="1" attrs="{'invisible': [('move_type', '!=', 'in_invoice')]}"/>
+                <field name="has_discount" invisible="1" force_save="1" attrs="{'invisible': [('move_type', '!=', 'in_invoice')]}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Update account vendor bill search view!-->
+    <record id="account_vendor_bill_groupby_inherit" model="ir.ui.view">
+        <field name="name">account.move.vendor.bill.search.view</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search/separator[1]" position="after">
+                <field name="has_discount"  invisible="context.get('default_move_type') != 'in_invoice'"/>
+                <field name="move_type" invisible="1"/>
+                <separator />
+                <filter name="has_discount" string="Has Discount" domain="[('has_discount', '=', True)]" invisible="context.get('default_move_type') != 'in_invoice'"/>
+                <filter name="has_no_discount" string="Has No Discount" domain="[('has_discount', '=', False)]" invisible="context.get('default_move_type') != 'in_invoice'"/>
+                <separator/>
+            </xpath>
+            <xpath expr="//search/group[1]" position="inside">
+                <filter name="has_discount" string="Has Discount" context="{'group_by':'has_discount'}"  invisible="context.get('default_move_type') != 'in_invoice'"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
