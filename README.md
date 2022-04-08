@@ -21,3 +21,4 @@ git clone git@github.com:mint-system/odoo-apps-account-invoicing.git ./addons/ac
 | [sale_invoice_cash_rounding_default](sale_invoice_cash_rounding_default/) | Apply default cash rounding when invoicing sale orders.              |
 | [account_move_reconciled_date](account_move_reconciled_date/)             | Show reconcile date of bank statement for account move.              |
 | [account_move_post_warn](account_move_post_warn/)                         | When an invoice is posted show the warning message from the partner. |
+| [nivels_deduct_supplier_discount](nivels_deduct_supplier_discount/)       | Allow discount deduction on vendor bills.                            |

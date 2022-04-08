@@ -1,7 +1,7 @@
 {
     "name": "Nivels deduct supplier discount",
     "summary": """
-        Module summary.
+        Allow discount deduction on vendor bills.
     """,
     "author": "nivels GmbH, Mint System GmbH, Odoo Community Association (OCA)",
     "website": "https://www.mint-system.ch",
