@@ -1,5 +1,5 @@
 {
-    "name": "Nivels deduct supplier discount",
+    "name": "Nivels Deduct Supplier Discount",
     "summary": """
         Allow discount deduction on vendor bills.
     """,

@@ -3,10 +3,10 @@
     :alt: License: GPL-3
 
 ===============================
-Nivels deduct supplier discount
+Nivels Deduct Supplier Discount
 ===============================
 
-Module summary.
+Allow discount deduction on vendor bills.
 
 For a detailed documentation have a look at https://www.odoo-wiki.org/.
 
@@ -14,15 +14,6 @@ For a detailed documentation have a look at https://www.odoo-wiki.org/.
   :height: 100
   :width: 100
   :alt: Icon
-
-Usage
-~~~~~
-
-Clone module into Odoo addon directory.
-
-.. code-block:: bash
-
-    git clone git@github.com:mint-system/odoo-app-nivels-deduct-supplier-discount.git ./addons/nivels_deduct_supplier_discount
 
 Configuration
 ~~~~~~~~~~~~~
