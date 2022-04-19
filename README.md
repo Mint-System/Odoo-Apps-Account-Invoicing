@@ -23,3 +23,4 @@ git clone git@github.com:mint-system/odoo-apps-account-invoicing.git ./addons/ac
 | [account_move_post_warn](account_move_post_warn/)                         | When an invoice is posted show the warning message from the partner. |
 | [nivels_deduct_supplier_discount](nivels_deduct_supplier_discount/)       | Allow discount deduction on vendor bills.                            |
 | [l10n_ch_qr_iban](l10n_ch_qr_iban/)                                       | Create payment references for QR invoice without ISR subscription.   |
+| [account_invoice_notes](account_invoice_notes/)                           | Footer and header notes for invoice that are copied from sale order. |
