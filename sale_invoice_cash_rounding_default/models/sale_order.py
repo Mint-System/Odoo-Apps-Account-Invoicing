@@ -10,6 +10,9 @@ class SaleOrder(models.Model):
         moves = super()._create_invoices(grouped=grouped, final=final, date=date)
         invoice_cash_rounding_id = self.env['ir.default'].get_model_defaults('account.move',condition='move_type=out_invoice').get('invoice_cash_rounding_id')
         if invoice_cash_rounding_id:
-            moves.invoice_cash_rounding_id = invoice_cash_rounding_id
-        # _logger.warning(["ADDED CASH ROUNDING", invoice_cash_rounding_id])
+            moves.update({
+                'invoice_cash_rounding_id': invoice_cash_rounding_id
+            })
+            # Update invoice lines, otherwise rounding line will not be created properly
+            moves.filtered(lambda r: r.state == "draft").with_context(check_move_validity=False)._move_autocomplete_invoice_lines_values()
         return moves
