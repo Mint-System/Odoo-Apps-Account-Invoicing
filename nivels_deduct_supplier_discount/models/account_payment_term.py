@@ -9,16 +9,25 @@
 #
 ##############################################################################
 
-from odoo import api, models, fields, _
+from odoo import fields, models
 
 
 class AccountPaymentTerm(models.Model):
-    _inherit = 'account.payment.term.line'
+    _inherit = "account.payment.term.line"
 
-    discount_product = fields.Many2one('product.product', string='Discount Product',
-                                       help='Product to use for the supplier discount in vendor bills.',
-                                       domain="[('type', '=', 'service')]")
-    value = fields.Selection(selection_add=[
-        ('discount', 'Discount'),
-    ], ondelete={'discount': 'set default'},
-        help="Select here the kind of valuation related to this payment terms line.")
+    # Added new field for set the default discount product on discount payment term
+    discount_product = fields.Many2one(
+        "product.product",
+        string="Discount Product",
+        help="Product to use for the supplier discount in vendor bills.",
+        domain="[('type', '=', 'service')]",
+    )
+
+    # Added new option discount to kind fo valuation and adding discount product
+    value = fields.Selection(
+        selection_add=[
+            ("discount", "Discount"),
+        ],
+        ondelete={"discount": "set default"},
+        help="Select here the kind of valuation related to this payment terms line.",
+    )

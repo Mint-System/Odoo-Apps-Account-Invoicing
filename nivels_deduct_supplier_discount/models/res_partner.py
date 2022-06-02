@@ -9,12 +9,16 @@
 #
 ##############################################################################
 
-from odoo import api, models, fields, _
+from odoo import fields, models
 
 
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
-    discount_payment_term_id = fields.Many2one('account.payment.term',
-                                               string='Vendor Discount Term',
-                                               help='Default payment term used for this supplier.')
+    # Added new field for our to set default discount payment term and will
+    # be adding when partner selected from account move object if value found
+    discount_payment_term_id = fields.Many2one(
+        "account.payment.term",
+        string="Vendor Discount Term",
+        help="Default payment term used for this supplier.",
+    )

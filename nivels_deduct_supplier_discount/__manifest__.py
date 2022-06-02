@@ -1,13 +1,22 @@
+##############################################################################
+#
+# Nivels GmbH
+# Comercialstrasse 19
+# 7000 Chur
+#
+# Copyright (C) 2022 Nivels GmbH.
+# All Rights Reserved
+#
+##############################################################################
+
 {
-    "name": "Nivels Deduct Supplier Discount",
-    "summary": """
-        Allow discount deduction on vendor bills.
-    """,
-    "author": "nivels GmbH, Mint System GmbH, Odoo Community Association (OCA)",
-    "website": "https://www.mint-system.ch",
-    "category": "Accounting",
-    "version": "14.0.1.0.0",
-    "license": "AGPL-3",
+    "name": "Nivels Sams Deduct Supplier Discount",
+    "version": "1.4",
+    "author": "nivels GmbH",
+    "category": "Accounting/Accounting",
+    "summary": "Nivels Sams Deduct Supplier Discount",
+    "license": "OPL-1",
+    "website": "www.nivels.ch",
     "depends": ["account", "purchase"],
     "data": [
         "data/account_move_data.xml",
@@ -16,7 +25,5 @@
         "views/account_move_views.xml",
     ],
     "installable": True,
-    "application": False,
     "auto_install": False,
-    "images": ["images/screen.png"],
 }
