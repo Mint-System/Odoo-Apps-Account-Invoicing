@@ -14,6 +14,7 @@ git clone git@github.com:mint-system/odoo-apps-account-invoicing.git ./addons/ac
 
 | Module | Summary |
 | --- | --- |
+| [account_invoice_carrier](account_invoice_carrier) |         Set delivery method on invoice. |
 | [account_invoice_comment](account_invoice_comment) |         Comment field in invoice. |
 | [account_invoice_description](account_invoice_description) |         Add description to invoice form and report. |
 | [account_invoice_detail](account_invoice_detail) |         Add field salesperson to invoice. |
@@ -26,5 +27,6 @@ git clone git@github.com:mint-system/odoo-apps-account-invoicing.git ./addons/ac
 | [account_move_reconciled_date](account_move_reconciled_date) |         Show reconcile date of bank statement for account move. |
 | [l10n_ch_qr_iban](l10n_ch_qr_iban) |         Create payment references for QR invoice without ISR subscription. |
 | [nivels_deduct_supplier_discount](nivels_deduct_supplier_discount) |     "license": "OPL-1", |
+| [sale_invoice_carrier](sale_invoice_carrier) |         Set delivery method of transfer when creating invoice from sale order. |
 | [sale_invoice_cash_rounding_default](sale_invoice_cash_rounding_default) |         Apply default cash rounding when invoicing sale orders. |
 | [sale_invoice_line_description](sale_invoice_line_description) |         When invoicing a sale order use product reference and name as line description. |
