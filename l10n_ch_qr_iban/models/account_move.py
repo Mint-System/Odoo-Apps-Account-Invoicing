@@ -22,6 +22,6 @@ class AccountMove(models.Model):
                     )
         return True
 
-    def _auto_compute_invoice_reference(self):
-        super()._auto_compute_invoice_reference()
-        return True
+    # def _auto_compute_invoice_reference(self):
+    #     super()._auto_compute_invoice_reference()
+    #     return False
