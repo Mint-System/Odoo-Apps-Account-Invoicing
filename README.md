@@ -30,3 +30,4 @@ git clone git@github.com:mint-system/odoo-apps-account-invoicing.git ./addons/ac
 | [sale_invoice_carrier](sale_invoice_carrier) |         Set delivery method of transfer when creating invoice from sale order. |
 | [sale_invoice_cash_rounding_default](sale_invoice_cash_rounding_default) |         Apply default cash rounding when invoicing sale orders. |
 | [sale_invoice_line_description](sale_invoice_line_description) |         When invoicing a sale order use product reference and name as line description. |
+| [sale_invoice_prepare_partner](sale_invoice_prepare_partner) |         Copy invoice and shipping contacts to invoice. |
