@@ -14,6 +14,7 @@ git clone git@github.com:mint-system/odoo-apps-account-invoicing.git ./addons/ac
 
 | Module | Summary |
 | --- | --- |
+| [account_invoice_comment](account_invoice_comment) |         Comment field in invoice. |
 | [account_invoice_description](account_invoice_description) |         Add description to invoice form and report. |
 | [account_invoice_detail](account_invoice_detail) |         Add field salesperson to invoice. |
 | [account_invoice_notes](account_invoice_notes) |         Footer and header notes for invoice that are copied from sale order. |
