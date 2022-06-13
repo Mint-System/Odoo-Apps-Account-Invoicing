@@ -2,11 +2,11 @@
     :target: http://www.gnu.org/licenses/gpl-3.0-standalone.html
     :alt: License: GPL-3
 
-===============================
-Account Move Line Link Pickings
-===============================
+==============================================
+Account Move Line Accounting Description Stock
+==============================================
 
-Get linked pickings for each account move line.
+Copy stock move description to external name on invoice creation.
 
 For a detailed documentation have a look at https://www.odoo-wiki.org/.
 
