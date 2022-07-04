@@ -14,5 +14,6 @@ class SaleOrder(models.Model):
                 'invoice_cash_rounding_id': invoice_cash_rounding_id
             })
             # Update invoice lines, otherwise rounding line will not be created properly
-            moves.filtered(lambda r: r.state == "draft").with_context(check_move_validity=False)._move_autocomplete_invoice_lines_values()
+            for move in moves.filtered(lambda r: r.state == "draft"):
+                move.with_context(check_move_validity=False)._move_autocomplete_invoice_lines_values()
         return moves
