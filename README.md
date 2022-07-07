@@ -26,8 +26,10 @@ git clone git@github.com:mint-system/odoo-apps-account-invoicing.git ./addons/ac
 | [account_move_line_position](account_move_line_position) |         Get line position from purchase or sale order. |
 | [account_move_post_warn](account_move_post_warn) |         When an invoice is posted show the warning message from the partner. |
 | [account_move_reconciled_date](account_move_reconciled_date) |         Show reconcile date of bank statement for account move. |
+| [l10n_ch_disable_default_reports](l10n_ch_disable_default_reports) |         Disable QR and ISR report generation. |
 | [l10n_ch_qr_iban](l10n_ch_qr_iban) |         Create payment references for QR invoice without ISR subscription. |
 | [nivels_deduct_supplier_discount](nivels_deduct_supplier_discount) |     "license": "OPL-1", |
+| [purchase_invoice_prepare_partner](purchase_invoice_prepare_partner) |         Copy invoice and shipping contacts to invoice. |
 | [sale_invoice_carrier](sale_invoice_carrier) |         Set delivery method of transfer when creating invoice from sale order. |
 | [sale_invoice_cash_rounding_default](sale_invoice_cash_rounding_default) |         Apply default cash rounding when invoicing sale orders. |
 | [sale_invoice_line_description](sale_invoice_line_description) |         When invoicing a sale order use product reference and name as line description. |
