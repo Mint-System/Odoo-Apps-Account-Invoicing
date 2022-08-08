@@ -11,7 +11,7 @@
 
 {
     "name": "Nivels Sams Deduct Supplier Discount",
-    "version": "1.4",
+    "version": "1.5",
     "author": "nivels GmbH",
     "category": "Accounting/Accounting",
     "summary": "Nivels Sams Deduct Supplier Discount",
