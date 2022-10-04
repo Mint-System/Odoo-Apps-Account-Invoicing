@@ -21,6 +21,7 @@ git clone git@github.com:mint-system/odoo-apps-account-invoicing.git ./addons/ac
 | [account_invoice_detail](account_invoice_detail) |         Add field salesperson to invoice. |
 | [account_invoice_notes](account_invoice_notes) |         Footer and header notes for invoice that are copied from sale order. |
 | [account_invoice_sale_partner](account_invoice_sale_partner) |         Set sale order contact on invoice. |
+| [account_invoice_select_bank](account_invoice_select_bank) |         Select bank by matching currency of invoice. |
 | [account_move_invoice_partner](account_move_invoice_partner) |         Separate field for invoice address. |
 | [account_move_line_accounting_description_stock](account_move_line_accounting_description_stock) |         Copy stock move description to external name on invoice creation. |
 | [account_move_line_link_pickings](account_move_line_link_pickings) |         Get linked pickings for each account move line. |
