@@ -7,7 +7,7 @@
     "website": "https://www.mint-system.ch",
     "category": "Invoicing",
     "version": "15.0.1.0.0",
-    "license": "OEEL-3",
+    "license": "OEEL-1",
     "depends": ["account_followup"],
     "installable": True,
     "application": False,
