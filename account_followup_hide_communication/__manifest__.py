@@ -7,7 +7,7 @@
     "website": "https://www.mint-system.ch",
     "category": "Invoicing",
     "version": "14.0.1.1.0",
-    "license": "AGPL-3",
+    "license": "OPL-1",
     "depends": ["account_followup"],
     "installable": True,
     "application": False,
