@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="account_journal_items_report" model="ir.actions.report">
+            <field name="name">Journal Items</field>
+            <field name="model">account.move.line</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">account_journal_items_report.account_move_line</field>
+            <field name="report_file">account_journal_items_report.account_move_line</field>
+            <field name="print_report_name">'Journal-Items'</field>
+            <field name="binding_model_id" ref="account.model_account_move_line" />
+            <field name="binding_type">report</field>
+            <field name="groups_id"
+                eval="[(4, ref('account.group_account_invoice')),(4, ref('account.group_account_readonly'))]" />
+        </record>
+
+        <template id="account_move_line">
+            <t t-call="web.html_container">
+                <t t-call="account_journal_items_report.account_move_line_document" />
+            </t>
+        </template>
+
+        <template id="account_move_line_document">
+            <t t-call="web.external_layout">
+
+                <div class="page">
+
+                    <h1>Kontoauszug</h1>
+
+                    <p>01.01.2022 - 31.12.2022</p>
+
+                    <h2>Konto 1000</h2>
+
+                    <table class="table table-sm o_main_table" name="journal_items_table">
+                        <thead>
+                            <tr>
+                                <th name="th_date">
+                                    <span>Date</span>
+                                </th>
+                                <th name="th_reference">
+                                    <span>Journal / Posting Text</span>
+                                </th>
+                                <th name="th_account">
+                                    <span>Entry / Contra Account</span>
+                                </th>
+                                <th name="th_debit" class="text-right">
+                                    <span>Debit</span>
+                                </th>
+                                <th name="th_credit" class="text-right">
+                                    <span>Credit</span>
+                                </th>
+                                <th name="th_balance" class="text-right">
+                                    <span>Balance</span>
+                                </th>
+                                <th name="th_cumulated_balance" class="text-right">
+                                    <span>Cumulated Balance</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="journal_items_table">
+                            <t t-foreach="docs" t-as="line">
+
+                                <tr>
+                                    <t t-set="line"
+                                        t-value="line.with_context(lang=line.partner_id.lang)" />
+                                    <td id="date">
+                                        <span t-field="line.date" />
+                                    </td>
+                                    <td id="name">
+                                        <span t-field="line.name" />
+                                    </td>
+                                    <td id="entry">
+                                        <span t-field="line.move_id" />
+                                    </td>
+                                    <td id="debit" class="text-right">
+                                        <span t-field="line.debit" />
+                                    </td>
+                                    <td id="credit" class="text-right">
+                                        <span t-field="line.credit" />
+                                    </td>
+                                    <td id="balance" class="text-right">
+                                        <span t-field="line.balance" />
+                                    </td>
+                                    <td id="cumulated_balance" class="text-right">
+                                        <span t-field="line.cumulated_balance" />
+                                    </td>
+                                </tr>
+
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </template>
+
+    </data>
+</odoo>
