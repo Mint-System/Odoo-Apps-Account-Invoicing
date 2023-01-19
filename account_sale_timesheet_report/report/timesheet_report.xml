@@ -12,7 +12,7 @@
                             <th id="name" class="align-middle"><span>Description</span></th>
                             <th id="project_id" class="align-middle" t-if="show_project"><span>Project</span></th>
                             <th id="task_id" class="align-middle" t-if="show_task"><span>Task</span></th>
-                            <th id="unit_amount" class="text-right">
+                            <th id="unit_amount" class="align-middle text-right">
                                 <span t-if="is_uom_day">Time Spent (Days)</span>
                                 <span t-else="">Time Spent (Hours)</span>
                             </th>
@@ -23,7 +23,7 @@
                             <td id="line_date">
                                <span t-field="line.date"/>
                             </td>
-                            <td  id="line_partner_id">
+                            <td id="line_partner_id">
                                <span t-field="line.user_id.partner_id.name"/>
                                <span t-if="not line.user_id.partner_id.name" t-field="line.employee_id"/>
                             </td>
