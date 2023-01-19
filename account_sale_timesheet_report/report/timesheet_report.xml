@@ -8,11 +8,11 @@
                     <thead>
                         <tr>
                             <th id="date" class="align-middle"><span>Date</span></th>
-                            <th class="align-middle"><span>Responsible</span></th>
-                            <th class="align-middle"><span>Description</span></th>
-                            <th class="align-middle" t-if="show_project"><span>Project</span></th>
-                            <th class="align-middle" t-if="show_task"><span>Task</span></th>
-                            <th class="text-right">
+                            <th id="partner_id" class="align-middle"><span>Responsible</span></th>
+                            <th id="name" class="align-middle"><span>Description</span></th>
+                            <th id="project_id" class="align-middle" t-if="show_project"><span>Project</span></th>
+                            <th id="task_id" class="align-middle" t-if="show_task"><span>Task</span></th>
+                            <th id="unit_amount" class="text-right">
                                 <span t-if="is_uom_day">Time Spent (Days)</span>
                                 <span t-else="">Time Spent (Hours)</span>
                             </th>
@@ -23,20 +23,20 @@
                             <td id="line_date">
                                <span t-field="line.date"/>
                             </td>
-                            <td>
+                            <td  id="line_partner_id">
                                <span t-field="line.user_id.partner_id.name"/>
                                <span t-if="not line.user_id.partner_id.name" t-field="line.employee_id"/>
                             </td>
-                            <td >
+                            <td  id="line_name">
                                 <span t-field="line.name" t-options="{'widget': 'text'}"/>
                             </td>
-                            <td t-if="show_project">
+                            <td  id="line_project_id" t-if="show_project">
                                 <span t-field="line.project_id.sudo().name"/>
                             </td>
-                            <td t-if="show_task">
+                            <td  id="line_task_id" t-if="show_task">
                                 <t t-if="line.task_id"><span t-field="line.task_id.sudo().name"/></t>
                             </td>
-                            <td class="text-right">
+                            <td  id="line_unit_amount" class="text-right">
                                 <span t-if="is_uom_day" t-esc="line._get_timesheet_time_day()" t-options="{'widget': 'timesheet_uom'}"/>
                                 <span t-else="" t-field="line.unit_amount" t-options="{'widget': 'duration', 'digital': True, 'unit': 'hour', 'round': 'minute'}"/>
                             </td>
