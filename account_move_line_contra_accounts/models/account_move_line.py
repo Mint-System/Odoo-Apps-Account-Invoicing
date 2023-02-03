@@ -12,6 +12,7 @@ class AccountMoveLine(models.Model):
     def _compute_contra_accounts(self):
         for rec in self:
             account_codes = rec.move_id.line_ids.mapped('account_id.code')
-            account_codes.remove(rec.account_id.code)
+            account_codes = list(filter(lambda c: c != rec.account_id.code, account_codes))
             account_codes.sort()
+            # _logger.warning([rec, account_codes])
             rec.contra_accounts = ', '.join(account_codes)
