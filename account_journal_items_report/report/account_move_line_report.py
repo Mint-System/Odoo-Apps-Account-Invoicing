@@ -15,6 +15,7 @@ class ReportAccountMoveLine(models.AbstractModel):
         domain = [('id', 'in', docids)]
         fields = ['date', 'name', 'journal_id', 'move_id', 'contra_accounts', 'debit', 'credit', 'balance', 'cumulated_balance', 'currency_id']
         groupby = ['account_id']
+        # orderby = 'date'
         docs_grouped = docs.read_group(domain=domain, fields=fields, groupby=groupby)
         docs_data = []
         for doc in docs_grouped:

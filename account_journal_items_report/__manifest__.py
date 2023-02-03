@@ -6,7 +6,7 @@
     "author": "Mint System GmbH, Odoo Community Association (OCA)",
     "website": "https://www.mint-system.ch",
     "category": "Accounting",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.1.0",
     "license": "AGPL-3",
     "depends": ["account", "account_move_line_contra_accounts"],
     "data": ["report/account_move_line_report.xml", "security/ir.model.access.csv"],
