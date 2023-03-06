@@ -19,3 +19,4 @@ git clone git@github.com:mint-system/odoo-apps-account-invoicing.git ./addons/ac
 | [account_invoice_sale_partner](account_invoice_sale_partner) |         Set sale order contact on invoice. |
 | [l10n_ch_disable_default_reports](l10n_ch_disable_default_reports) |         Disable QR and ISR report generation. |
 | [l10n_ch_qr_iban](l10n_ch_qr_iban) |         Create payment references for QR invoice without ISR subscription. |
+| [sale_invoice_cash_rounding_default](sale_invoice_cash_rounding_default) |         Apply default cash rounding when invoicing sale orders. |
