@@ -28,7 +28,6 @@ class AccountMove(models.Model):
                     warning = {'warning': warning}
 
         if warning:
-            _logger.warning(warning['message'])
             odoobot = self.env.ref('base.partner_root')
             self.message_post(body=warning['title']+': '+warning['message'],
                               message_type='comment',
