@@ -2,29 +2,13 @@
 <odoo>
     <record id="report_invoice_document" model="ir.ui.view">
         <field name="name">account_invoice_description.report_invoice_document</field>
-        <field name="active" eval="True"/>
+        <field name="inherit_id" ref="account.report_invoice_document"/>
         <field name="arch" type="xml">
             <data>
-                <xpath expr="/t/t/div/h2" position="after">
-                    <t t-if="o.description">
-                        <div class="row">
-                            <div class="col">
-                                <br/>
-                                <span t-field="o.description"/>
-                                <br/>
-                                <br/>
-                            </div>
-                        </div>
-                    </t>
-                </xpath>
-                <xpath expr="/t/t/div/h2" position="attributes">
-                    <attribute name="style" separator=";" add="margin-top:15px"/>
+                <xpath expr="//h2" position="after">
+                    <p name="description" t-field="o.description"/>
                 </xpath>
             </data>
         </field>
-        <field name="inherit_id" ref="account.report_invoice_document"/>
-        <field name="mode">extension</field>
-        <field name="model" eval="False"/>
-        <field name="priority">99</field>
     </record>
 </odoo>
