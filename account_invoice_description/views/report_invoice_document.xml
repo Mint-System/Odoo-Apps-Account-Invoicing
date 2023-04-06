@@ -2,6 +2,7 @@
 <odoo>
     <record id="report_invoice_document" model="ir.ui.view">
         <field name="name">account_invoice_description.report_invoice_document</field>
+        <field name="model">account.move</field>
         <field name="inherit_id" ref="account.report_invoice_document"/>
         <field name="arch" type="xml">
             <data>
