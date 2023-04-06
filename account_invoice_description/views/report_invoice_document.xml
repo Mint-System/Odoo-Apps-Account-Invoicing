@@ -1,15 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <odoo>
-    <record id="report_invoice_document" model="ir.ui.view">
-        <field name="name">account_invoice_description.report_invoice_document</field>
-        <field name="model">account.move</field>
-        <field name="inherit_id" ref="account.report_invoice_document"/>
-        <field name="arch" type="xml">
-            <data>
-                <xpath expr="//h2" position="after">
-                    <p name="description" t-field="o.description"/>
-                </xpath>
-            </data>
-        </field>
-    </record>
+    <template id="report_invoice_document" inherit_id="account.report_invoice_document">
+        <xpath expr="//h2" position="after">
+            <p t-if="o.description" name="description" t-field="o.description"/>
+        </xpath>
+    </template>
 </odoo>
