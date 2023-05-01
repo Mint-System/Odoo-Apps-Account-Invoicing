@@ -21,6 +21,7 @@ git clone git@github.com:mint-system/odoo-apps-account-invoicing.git ./addons/ac
 | [account_move_line_description](account_move_line_description) |         Create invoice line description without product default code. |
 | [account_move_line_position](account_move_line_position) |         Enable line position number and link from purchase or sale order. |
 | [l10n_ch_disable_default_reports](l10n_ch_disable_default_reports) |         Disable QR and ISR report generation. |
+| [l10n_ch_invoice_reports_with_payments](l10n_ch_invoice_reports_with_payments) |         Print report with payment slip and payment details. |
 | [l10n_ch_qr_code_ref](l10n_ch_qr_code_ref) |         Always use the invoice name as free communication content. |
 | [l10n_ch_qr_iban](l10n_ch_qr_iban) |         Create payment references for QR invoice without ISR subscription. |
 | [sale_invoice_cash_rounding_default](sale_invoice_cash_rounding_default) |         Apply default cash rounding when invoicing sale orders. |
