@@ -16,15 +16,11 @@ class AccountMove(models.Model):
     def _compute_partner_bank_id(self):
         res = super()._compute_partner_bank_id()
         for move in self:
-            bank_ids = move.bank_partner_id.bank_ids.filtered(
-                lambda bank: bank.company_id is False
-                or bank.company_id == move.company_id
-            )
-            bank_currency_ids = bank_ids.filtered(
+            bank_currency_id = move.bank_partner_id.bank_ids.filtered(
                 lambda bank: bank.currency_id == move.currency_id
-            )
-            if bank_currency_ids:
-                move.partner_bank_id = bank_currency_ids[0]
+            )[:1]
+            if bank_currency_id:
+                move.partner_bank_id = bank_currency_id[0]
             else:
-                move.partner_bank_id = bank_ids and bank_ids[0]
+                move.partner_bank_id = False
         return res
