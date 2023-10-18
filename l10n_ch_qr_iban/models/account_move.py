@@ -1,10 +1,12 @@
 import logging
-from odoo import _, api, fields, models, exceptions
+
+from odoo import _, api, exceptions, models
+
 _logger = logging.getLogger(__name__)
 
 
 class AccountMove(models.Model):
-    _inherit = 'account.move'
+    _inherit = "account.move"
 
     @api.constrains("ref", "payment_reference")
     def _check_bank_type_for_type_isr(self):

@@ -1,14 +1,14 @@
 {
-    "name": "Switzerland QR IBAN",
+    "name": "Account Invoice Select Bank",
     "summary": """
-        Create payment references for QR invoice without ISR subscription.
+        Select bank by matching currency of invoice.
     """,
     "author": "Mint System GmbH, Odoo Community Association (OCA)",
     "website": "https://www.mint-system.ch",
-    "category": "Accounting",
-    "version": "15.0.1.0.0",
+    "category": "Invoicing",
+    "version": "15.0.2.1.0",
     "license": "AGPL-3",
-    "depends": ["l10n_ch_base_bank"],
+    "depends": ["account"],
     "installable": True,
     "application": False,
     "auto_install": False,

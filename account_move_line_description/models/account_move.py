@@ -1,10 +1,12 @@
-from odoo import models, fields
 import logging
+
+from odoo import models
+
 _logger = logging.getLogger(__name__)
 
 
 class AccountMoveLine(models.Model):
-    _inherit = 'account.move.line'
+    _inherit = "account.move.line"
 
     def _get_computed_name(self):
         if self.partner_id.lang:

@@ -18,6 +18,7 @@ git clone git@github.com:mint-system/odoo-apps-account-invoicing.git ./addons/ac
 | [account_invoice_detail](account_invoice_detail) |         Add field salesperson to invoice. |
 | [account_invoice_multiline_ref](account_invoice_multiline_ref) |         Enable multiline text for client order and inovice ref. |
 | [account_invoice_sale_partner](account_invoice_sale_partner) |         Set sale order contact on invoice. |
+| [account_invoice_select_bank](account_invoice_select_bank) |         Select bank by matching currency of invoice. |
 | [account_move_line_description](account_move_line_description) |         Create invoice line description without product default code. |
 | [account_move_line_position](account_move_line_position) |         Enable line position number and link from purchase or sale order. |
 | [account_move_reconciled_date](account_move_reconciled_date) |         Show reconcile date of bank statement for account move. |

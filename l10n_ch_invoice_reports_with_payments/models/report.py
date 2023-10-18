@@ -1,11 +1,10 @@
 import io
-from io import BytesIO
+
 from odoo import models
 
 
 class IrActionsReport(models.Model):
     _inherit = "ir.actions.report"
-
 
     def _render_qweb_pdf(self, res_ids=None, data=None):
         reports = [

@@ -5,7 +5,7 @@
         <field name="active" eval="True"/>
         <field name="arch" type="xml">
             <data>
-                
+
                 <!-- Remove reference -->
                 <xpath expr="/t/t/div/div[1]/div[5]" position="replace">
                 </xpath>
