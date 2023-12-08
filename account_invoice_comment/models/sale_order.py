@@ -6,6 +6,6 @@ class SaleOrder(models.Model):
 
     def _prepare_invoice(self):
         invoice_vals = super()._prepare_invoice()
-        if self.comment and self.env.company_id.group_copy_sale_order_comment:
+        if self.comment and self.company_id.copy_sale_order_comment:
             invoice_vals["comment"] = self.comment
         return invoice_vals
