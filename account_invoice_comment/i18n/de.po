@@ -20,7 +20,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:account_invoice_comment.field_account_move__comment
 #: model:ir.model.fields,field_description:account_invoice_comment.field_account_payment__comment
 msgid "Comment"
-msgstr "Referenz"
+msgstr "Kommentar"
 
 #. module: account_invoice_comment
 #: model:ir.model.fields,field_description:account_invoice_comment.field_account_move__display_name
