@@ -14,4 +14,5 @@ git clone git@github.com:mint-system/odoo-apps-account-invoicing.git ./addons/ac
 
 | Module | Summary |
 | --- | --- |
+| [account_invoice_comment](account_invoice_comment) |         Comment field in invoice. |
 | [account_invoice_select_bank](account_invoice_select_bank) |         Select bank by matching currency of invoice. |
