@@ -8,20 +8,10 @@ Sale Invoice Cash Rounding Default
 
 Apply default cash rounding when invoicing sale orders.
 
-For a detailed documentation have a look at https://www.odoo-wiki.org/.
-
-.. image:: https://raw.githubusercontent.com/Mint-System/Wiki/master/assets/icon-box.png
-  :height: 100
-  :width: 100
-  :alt: Icon
-
-Configuration
-~~~~~~~~~~~~~
-
-* Create ``ir.default`` value for ``invoice_cash_rounding_id`` field (``account.move`` module) and condition ``move_type=out_invoice``.
+For a detailed documentation have a look at https://www.odoo-wiki.org/sale-invoice-cash-rounding-default.html
 
 Maintainer
-==========
+~~~~~~~~~~
 
 .. image:: https://raw.githubusercontent.com/Mint-System/Wiki/master/assets/mint-system-logo.png
   :target: https://www.mint-system.ch

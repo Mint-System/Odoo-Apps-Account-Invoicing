@@ -13,10 +13,4 @@ class SaleOrder(models.Model):
         company = self.env.company
         if company.invoice_cash_rounding_id:
             moves.update({"invoice_cash_rounding_id": company.invoice_cash_rounding_id})
-
-            # Update invoice lines, otherwise rounding line will not be created properly
-            for move in moves.filtered(lambda r: r.state == "draft"):
-                move.with_context(
-                    check_move_validity=False
-                )._move_autocomplete_invoice_lines_values()
         return moves
