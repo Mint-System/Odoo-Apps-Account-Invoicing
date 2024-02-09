@@ -10,9 +10,9 @@
         <field name="arch" type="xml">
             <filter name="closed" position="after">
                 <filter
-                    name="has_outstanding_move_lines"
+                    name="has_outstanding_credits"
                     string="Outstanding Credits"
-                    domain="[('has_outstanding_move_lines', '=', True)]"
+                    domain="[('has_outstanding_credits', '=', True)]"
                 />
             </filter>
         </field>
