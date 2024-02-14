@@ -1,6 +1,6 @@
 import logging
 
-from odoo import fields, models, api
+from odoo import api, fields, models
 
 _logger = logging.getLogger(__name__)
 
@@ -43,7 +43,7 @@ class AccountMoveLine(models.Model):
         "matched_credit_ids",
     )
     def _compute_amount_residual(self):
-        super()._compute_amount_residual(self)
+        super()._compute_amount_residual()
         self._update_has_outstanding_credits()
 
     def _update_has_outstanding_credits(self):
