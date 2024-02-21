@@ -42,9 +42,6 @@ class AccountMoveLine(models.Model):
         "matched_debit_ids",
         "matched_credit_ids",
     )
-    def _compute_amount_residual(self):
-        super()._compute_amount_residual()
-        self._update_has_outstanding_credits()
 
     def _update_has_outstanding_credits(self):
         """
@@ -54,14 +51,14 @@ class AccountMoveLine(models.Model):
 
             # Get open invoices from the same partner
             domain = [
-                ("partner_id", "=", move.partner_id.id),
+                ("partner_id", "=", line.partner_id.id),
                 ("payment_state", "!=", "paid"),
             ]
             related_invoices = self.env["account.move"].search(domain)
 
             # Get unreconciled credit lines from the same partner
             domain = [
-                ("partner_id", "=", move.partner_id.id),
+                ("partner_id", "=", line.partner_id.id),
                 ("move_type", "=", "out_refund"),
                 ("parent_state", "=", "posted"),
                 ("account_id.reconcile", "=", True),
@@ -72,3 +69,7 @@ class AccountMoveLine(models.Model):
 
             # Update related invoices
             related_invoices.write({"has_outstanding_credits": has_outstanding_credits})
+
+    def _compute_amount_residual(self):
+        super()._compute_amount_residual()
+        self._update_has_outstanding_credits()
