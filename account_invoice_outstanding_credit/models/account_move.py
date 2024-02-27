@@ -42,7 +42,6 @@ class AccountMoveLine(models.Model):
         "matched_debit_ids",
         "matched_credit_ids",
     )
-
     def _update_has_outstanding_credits(self):
         """
         When a line of a credit move is reconciled update the outstanding credits field on related invoices.
