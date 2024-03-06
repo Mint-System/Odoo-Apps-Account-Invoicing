@@ -8,67 +8,62 @@ _logger = logging.getLogger(__name__)
 class AccountMove(models.Model):
     _inherit = "account.move"
 
-    has_outstanding_credits = fields.Boolean(default=False)
+    has_outstanding_credits = fields.Boolean(default=False, compute="compute_has_outstanding_credits", store=True)
+
+    @api.model
+    def not_paid_invoices_from_partner(self, partner_id):
+        domain = [
+            ("partner_id", "=", partner_id.id),
+            ("move_type", "=", "out_invoice"),
+            ("payment_state", "not in", ["paid", "reversed"]),
+        ]
+        return self.env["account.move"].search(domain)
+
+    def has_unreconciled_credit_move_lines(self):
+        domain = [
+            ("partner_id", "=", self.partner_id.id),
+            ("move_type", "=", "out_refund"),
+            ("parent_state", "=", "posted"),
+            ("account_id.reconcile", "=", True),
+            ("amount_residual", "!=", 0),
+        ]
+        credit_move_lines = self.env["account.move.line"].search_count(domain)
+        return True if credit_move_lines > 0 else False
+
+    @api.depends('payment_state')
+    def compute_has_outstanding_credits(self):
+        """
+        When an outgoing invoice is updated compute the oustanding credits field.
+        """
+        for move in self:
+            if move.has_unreconciled_credit_move_lines() and move.payment_state not in ["paid", "reversed"]:
+                move.has_outstanding_credits = True
+            else:
+                move.has_outstanding_credits = False
 
     def action_post(self):
-        """
-        When a credit move is posted update the outstanding credits field on related invoices.
-        """
         res = super().action_post()
         for move in self.filtered(lambda m: m.move_type == "out_refund"):
-
-            # Get open invoices from the same partner
-            domain = [
-                ("partner_id", "=", move.partner_id.id),
-                ("payment_state", "!=", "paid"),
-            ]
-            related_invoices = self.env["account.move"].search(domain)
-
-            # Update related invoices
-            related_invoices.has_outstanding_credits = True
+            self.not_paid_invoices_from_partner(move.partner_id).compute_has_outstanding_credits()
         return res
 
+    def button_draft(self):
+        res = super().button_draft()
+        for move in self.filtered(lambda m: m.move_type == "out_refund"):
+            self.not_paid_invoices_from_partner(move.partner_id).compute_has_outstanding_credits()
+        return res
+
+    def button_cancel(self):        
+        res = super().button_cancel()
+        for move in self.filtered(lambda m: m.move_type == "out_refund"):
+            self.not_paid_invoices_from_partner(move.partner_id).compute_has_outstanding_credits()
+        return res
 
 class AccountMoveLine(models.Model):
     _inherit = "account.move.line"
 
-    @api.depends(
-        "debit",
-        "credit",
-        "amount_currency",
-        "account_id",
-        "currency_id",
-        "company_id",
-        "matched_debit_ids",
-        "matched_credit_ids",
-    )
-    def _update_has_outstanding_credits(self):
-        """
-        When a line of a credit move is reconciled update the outstanding credits field on related invoices.
-        """
-        for line in self.filtered(lambda m: m.move_type == "out_refund"):
-
-            # Get open invoices from the same partner
-            domain = [
-                ("partner_id", "=", line.partner_id.id),
-                ("payment_state", "!=", "paid"),
-            ]
-            related_invoices = self.env["account.move"].search(domain)
-
-            # Get unreconciled credit lines from the same partner
-            domain = [
-                ("partner_id", "=", line.partner_id.id),
-                ("move_type", "=", "out_refund"),
-                ("parent_state", "=", "posted"),
-                ("account_id.reconcile", "=", True),
-                ("amount_residual", "!=", 0),
-            ]
-            credit_move_lines = self.env["account.move.line"].search_count(domain)
-            has_outstanding_credits = True if credit_move_lines > 0 else False
-
-            # Update related invoices
-            related_invoices.write({"has_outstanding_credits": has_outstanding_credits})
-
-    def _compute_amount_residual(self):
-        super()._compute_amount_residual()
-        self._update_has_outstanding_credits()
+    def reconcile(self):
+        res = super().reconcile()
+        for line in self:
+            self.env['account.move'].not_paid_invoices_from_partner(line.partner_id).compute_has_outstanding_credits()
+        return res
