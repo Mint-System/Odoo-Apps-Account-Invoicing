@@ -8,7 +8,9 @@ _logger = logging.getLogger(__name__)
 class AccountMove(models.Model):
     _inherit = "account.move"
 
-    has_outstanding_credits = fields.Boolean(default=False, compute="compute_has_outstanding_credits", store=True)
+    has_outstanding_credits = fields.Boolean(
+        default=False, compute="_compute_has_outstanding_credits", store=True
+    )
 
     @api.model
     def not_paid_invoices_from_partner(self, commercial_partner_id):
@@ -21,7 +23,6 @@ class AccountMove(models.Model):
         _logger.debug("Invoices found: %s", invoices)
         return invoices
 
-
     def has_unreconciled_credit_move_lines(self):
         domain = [
             ("move_id.commercial_partner_id", "=", self.commercial_partner_id.id),
@@ -33,13 +34,16 @@ class AccountMove(models.Model):
         credit_move_lines = self.env["account.move.line"].search_count(domain)
         return credit_move_lines > 0
 
-    @api.depends('payment_state')
-    def compute_has_outstanding_credits(self):
+    @api.depends("payment_state")
+    def _compute_has_outstanding_credits(self):
         """
         When an outgoing invoice is updated compute the oustanding credits field.
         """
         for move in self:
-            if move.has_unreconciled_credit_move_lines() and move.payment_state not in ["paid", "reversed"]:
+            if move.has_unreconciled_credit_move_lines() and move.payment_state not in [
+                "paid",
+                "reversed",
+            ]:
                 move.has_outstanding_credits = True
             else:
                 move.has_outstanding_credits = False
@@ -47,20 +51,27 @@ class AccountMove(models.Model):
     def action_post(self):
         res = super().action_post()
         for move in self.filtered(lambda m: m.move_type == "out_refund"):
-            self.not_paid_invoices_from_partner(move.partner_id.commercial_partner_id.id).compute_has_outstanding_credits()
+            self.not_paid_invoices_from_partner(
+                move.partner_id.commercial_partner_id.id
+            ).compute_has_outstanding_credits()
         return res
 
     def button_draft(self):
         res = super().button_draft()
         for move in self.filtered(lambda m: m.move_type == "out_refund"):
-            self.not_paid_invoices_from_partner(move.partner_id.commercial_partner_id.id).compute_has_outstanding_credits()
+            self.not_paid_invoices_from_partner(
+                move.partner_id.commercial_partner_id.id
+            ).compute_has_outstanding_credits()
         return res
 
-    def button_cancel(self):        
+    def button_cancel(self):
         res = super().button_cancel()
         for move in self.filtered(lambda m: m.move_type == "out_refund"):
-            self.not_paid_invoices_from_partner(move.partner_id.commercial_partner_id.id).compute_has_outstanding_credits()
+            self.not_paid_invoices_from_partner(
+                move.partner_id.commercial_partner_id.id
+            ).compute_has_outstanding_credits()
         return res
+
 
 class AccountMoveLine(models.Model):
     _inherit = "account.move.line"
@@ -68,5 +79,7 @@ class AccountMoveLine(models.Model):
     def reconcile(self):
         res = super().reconcile()
         for line in self:
-            self.env['account.move'].not_paid_invoices_from_partner(line.partner_id.commercial_partner_id.id).compute_has_outstanding_credits()
+            self.env["account.move"].not_paid_invoices_from_partner(
+                line.partner_id.commercial_partner_id.id
+            ).compute_has_outstanding_credits()
         return res
