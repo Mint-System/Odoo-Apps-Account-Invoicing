@@ -13,19 +13,18 @@ class AccountMove(models.Model):
     )
 
     @api.model
-    def not_paid_invoices_from_partner(self, commercial_partner_id):
+    def not_paid_invoices_from_partner(self, partner_id):
         domain = [
-            ("commercial_partner_id", "=", commercial_partner_id),
+            ("commercial_partner_id", "=", partner_id.id),
             ("move_type", "=", "out_invoice"),
             ("payment_state", "not in", ["paid", "reversed"]),
         ]
         invoices = self.env["account.move"].search(domain)
-        _logger.debug("Invoices found: %s", invoices)
         return invoices
 
     def has_unreconciled_credit_move_lines(self):
         domain = [
-            ("move_id.commercial_partner_id", "=", self.commercial_partner_id.id),
+            ("partner_id", "=", self.commercial_partner_id.id),
             ("move_type", "=", "out_refund"),
             ("parent_state", "=", "posted"),
             ("account_id.reconcile", "=", True),
@@ -52,24 +51,24 @@ class AccountMove(models.Model):
         res = super().action_post()
         for move in self.filtered(lambda m: m.move_type == "out_refund"):
             self.not_paid_invoices_from_partner(
-                move.partner_id.commercial_partner_id.id
-            ).compute_has_outstanding_credits()
+                move.commercial_partner_id
+            )._compute_has_outstanding_credits()
         return res
 
     def button_draft(self):
         res = super().button_draft()
         for move in self.filtered(lambda m: m.move_type == "out_refund"):
             self.not_paid_invoices_from_partner(
-                move.partner_id.commercial_partner_id.id
-            ).compute_has_outstanding_credits()
+                move.commercial_partner_id
+            )._compute_has_outstanding_credits()
         return res
 
     def button_cancel(self):
         res = super().button_cancel()
         for move in self.filtered(lambda m: m.move_type == "out_refund"):
             self.not_paid_invoices_from_partner(
-                move.partner_id.commercial_partner_id.id
-            ).compute_has_outstanding_credits()
+                move.commercial_partner_id
+            )._compute_has_outstanding_credits()
         return res
 
 
@@ -80,6 +79,6 @@ class AccountMoveLine(models.Model):
         res = super().reconcile()
         for line in self:
             self.env["account.move"].not_paid_invoices_from_partner(
-                line.partner_id.commercial_partner_id.id
-            ).compute_has_outstanding_credits()
+                line.partner_id
+            )._compute_has_outstanding_credits()
         return res
