@@ -6,7 +6,7 @@
 Account Invoice Move Date
 =========================
 
-Ensure move date is not overwritten by invoice date.
+Set move date independent of invoice date.
 
 For a detailed documentation have a look at https://www.odoo-wiki.org/account-invoice-move-date.html.
 
