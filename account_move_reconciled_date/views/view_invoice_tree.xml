@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version='1.0' encoding='UTF-8' ?>
 <odoo>
 
   <record id="view_invoice_tree_show_reconcile_date" model="ir.ui.view">
@@ -7,7 +7,7 @@
     <field name="inherit_id" ref="account.view_invoice_tree" />
     <field name="arch" type="xml">
       <field name="payment_state" position="after">
-          <field name="reconcile_date" optional="hide"/>
+          <field name="reconcile_date" optional="hide" />
       </field>
     </field>
   </record>
