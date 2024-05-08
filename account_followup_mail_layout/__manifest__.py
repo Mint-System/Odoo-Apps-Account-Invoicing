@@ -1,11 +1,11 @@
 {
-    "name": "Account Followup Manual Reminder",
+    "name": "Account Followup Mail Layout",
     "summary": """
-        Set default reminder type on partner to manual.
+        Use email layout for followup mails.
     """,
     "author": "Mint System GmbH, Odoo Community Association (OCA)",
     "website": "https://www.mint-system.ch",
-    "category": "Accounting",
+    "category": "Invoicing",
     "version": "16.0.1.0.0",
     "license": "OPL-1",
     "depends": ["account_followup"],
