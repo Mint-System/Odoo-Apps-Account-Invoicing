@@ -11,7 +11,7 @@ class AccountFollowupReport(models.AbstractModel):
     @api.model
     def _send_email(self, options):
         """
-        Method overwrite to set a new `subtype_id` and `email_layout_xmlid`.
+        Method overwrite to set a new `subtype_id`, `email_layout_xmlid` and add `email_add_signature`.
         """
         partner = self.env["res.partner"].browse(options.get("partner_id"))
         followup_contacts = partner._get_all_followup_contacts() or partner
@@ -54,6 +54,7 @@ class AccountFollowupReport(models.AbstractModel):
                     model_description=_("payment reminder"),
                     email_layout_xmlid="mail.mail_notification_layout",
                     attachment_ids=attachment_ids,
+                    email_add_signature=False,
                 )
                 sent_at_least_once = True
         if not sent_at_least_once:
