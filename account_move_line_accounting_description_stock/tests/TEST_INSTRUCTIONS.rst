@@ -1,0 +1,6 @@
+- Install the module
+- The module adds a new field on the invoice form - "External Name" (external_name)
+- Create a sales order
+- Confirm the delivery
+- Create an invoice from a sales order
+- The new field is added and External Note will be inserted automatically
