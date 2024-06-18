@@ -1,7 +1,8 @@
-from odoo import api, fields, models, _
+from odoo import fields, models
+
 
 class AccountMove(models.Model):
-    _inherit = 'account.move'
+    _inherit = "account.move"
 
     note_header = fields.Html()
     note_footer = fields.Html()

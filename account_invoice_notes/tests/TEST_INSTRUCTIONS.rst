@@ -1,0 +1,4 @@
+- Install the module
+- The module adds a new tab on the invoice from - "Notes"
+- Open any existing invoice or create a new one
+- The new tab and fields for creating a note are added to the invoice form

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
   <record id="view_move_form" model="ir.ui.view">
@@ -10,7 +10,7 @@
         <page string="Notes">
           <group name="notes">
             <field name="note_header" />
-            <field name="note_footer"/>
+            <field name="note_footer" />
           </group>
         </page>
       </xpath>

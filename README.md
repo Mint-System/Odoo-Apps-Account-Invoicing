@@ -18,6 +18,7 @@ git clone git@github.com:mint-system/odoo-apps-account-invoicing.git ./addons/ac
 | [account_followup_manual_reminder](account_followup_manual_reminder) |         Set default reminder type on partner to manual. |
 | [account_invoice_comment](account_invoice_comment) |         Comment field in invoice. |
 | [account_invoice_move_date](account_invoice_move_date) |         Set move date independent of invoice date. |
+| [account_invoice_notes](account_invoice_notes) |         Footer and header notes for invoice that are copied from sale order. |
 | [account_invoice_outstanding_credit](account_invoice_outstanding_credit) |         Filter customer invoices with open credits. |
 | [account_invoice_sale_partner](account_invoice_sale_partner) |         Set sale order contact on invoice. |
 | [account_invoice_select_bank](account_invoice_select_bank) |         Select bank by matching currency of invoice. |
