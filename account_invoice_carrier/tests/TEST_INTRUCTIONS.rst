@@ -1,0 +1,4 @@
+- Install the module
+- The module adds a new field - "Delivery Method" (carrier_id)
+- Open any existing invoice or create a new one
+- The new field is added to the invoice form
