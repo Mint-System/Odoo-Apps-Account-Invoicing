@@ -9,6 +9,7 @@ class AccountMove(models.Model):
         string="Delivery Method",
         domain="['|', ('company_id', '=', False), ('company_id', '=', company_id)]",
         help="Fill this field if you plan to invoice the shipping based on picking.",
+        compute="_compute_carrier_id",
     )
 
     @api.depends("partner_id")
