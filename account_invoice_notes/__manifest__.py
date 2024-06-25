@@ -1,5 +1,5 @@
 {
-    "name": "Account invoice notes",
+    "name": "Account Invoice Notes",
     "summary": """
         Footer and header notes for invoice that are copied from sale order.
     """,
