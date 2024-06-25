@@ -14,14 +14,15 @@ class AccountMove(models.Model):
         readonly=True,
         states={"draft": [("readonly", False)]},
         domain="['|', ('company_id', '=', False), ('company_id', '=', company_id)]",
+        compute="_compute_partner_invoice_id",
+        store=True,
     )
 
-    @api.onchange("partner_id")
-    def _onchange_partner_id(self):
-        super()._onchange_partner_id()
-        if not self.partner_id:
-            self.partner_invoice_id = False
-            return
-
-        addr = self.partner_id.address_get(["invoice"])
-        self.update({"partner_invoice_id": addr["invoice"]})
+    @api.depends("partner_id")
+    def _compute_partner_invoice_id(self):
+        for record in self:
+            if not record.partner_id:
+                record.partner_invoice_id = False
+            else:
+                addr = record.partner_id.address_get(["invoice"])
+                record.partner_invoice_id = addr.get("invoice", False)
