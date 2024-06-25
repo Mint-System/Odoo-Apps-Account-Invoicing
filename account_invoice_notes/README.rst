@@ -8,21 +8,8 @@ Account Invoice Notes
 
 Footer and header notes for invoice that are copied from sale order.
 
-For a detailed documentation have a look at https://www.odoo-wiki.org/.
-
-.. image:: https://raw.githubusercontent.com/Mint-System/Wiki/master/assets/icon-box.png
-  :height: 100
-  :width: 100
-  :alt: Icon
-
-Usage
-~~~~~
-
-Clone module into Odoo addon directory.
-
-.. code-block:: bash
-
-    git clone git@github.com:mint-system/odoo-app-account-invoice-notes.git ./addons/account_invoice_notes
+For a detailed documentation have a look at
+https://www.odoo-wiki.org/account-invoice-notes.html
 
 Configuration
 ~~~~~~~~~~~~~
