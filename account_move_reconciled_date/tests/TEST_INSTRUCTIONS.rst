@@ -1,0 +1,6 @@
+- Install the module
+- Install the accounting app
+- The module adds a reconcile_date field to the list of invoices
+- Open the list of invoices
+- Reconcile the balances
+- Check the reconciled date in the invoices list
