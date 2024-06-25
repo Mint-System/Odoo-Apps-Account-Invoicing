@@ -11,7 +11,7 @@ class AccountMove(models.Model):
         help="Fill this field if you plan to invoice the shipping based on picking.",
     )
 
-    @api.onchange("partner_id")
-    def _onchange_carrier_id(self):
+    @api.depends("partner_id")
+    def _compute_carrier_id(self):
         for move in self.filtered(lambda m: not m.carrier_id):
             move.carrier_id = move.partner_id.property_delivery_carrier_id
