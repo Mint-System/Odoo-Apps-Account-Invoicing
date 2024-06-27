@@ -1,7 +1,4 @@
-- Install the module
-- The module adds a new tab on the Invoice form - "Notes"
-- The module takes the existing notes from the Sale Order
-- Install the sale_order_note module
-- Create a Sale Order and write a note
-- From the Sale Order create an Invoice
-- The note from the Sale Order is shown in the Invoice
+- Create a sale order with any product and partner
+- Define notes in the notes tab
+- Confirm the sale order and create the invoice
+- Check if the same notes are available in the invoice
