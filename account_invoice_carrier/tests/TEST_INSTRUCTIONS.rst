@@ -1,4 +1,5 @@
 - Install the module
-- The module adds a new field - "Delivery Method" (carrier_id)
-- Open any existing invoice or create a new one
-- The new field is added to the invoice form
+- On the partner "Deco Addict" in the sales tab set the delivery method
+- Create a new invoice for the customer "Deco Addict"
+- The new field was added to the invoice form
+- Check if the delivery method is same as set on the contact
