@@ -1,0 +1,5 @@
+- Install the module
+- On the partner "Deco Addict" in the sales tab set the delivery method
+- Create a new invoice for the customer "Deco Addict"
+- The new field was added to the invoice form
+- Check if the delivery method is same as set on the contact
