@@ -8,14 +8,18 @@ _logger = logging.getLogger(__name__)
 class AccountMove(models.Model):
     _inherit = "account.move"
 
-    partner_sale_id = fields.Many2one("res.partner", string="Sale Contact Address")
+    partner_sale_id = fields.Many2one(
+        "res.partner",
+        string="Sale Contact Address",
+        compute="_compute_partner_sale_id",
+        store=True,
+    )
 
-    @api.onchange("partner_id")
-    def _onchange_partner_id(self):
-        res = super()._onchange_partner_id()
-        addr = self.partner_id.address_get(["sale"])
-        values = {
-            "partner_sale_id": addr["sale"],
-        }
-        self.update(values)
-        return res
+    @api.depends("partner_id")
+    def _compute_partner_sale_id(self):
+        for move in self:
+            if move.partner_id:
+                addr = move.partner_id.address_get(["sale"])
+                move.partner_sale_id = addr["sale"]
+            else:
+                move.partner_sale_id = False
