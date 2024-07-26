@@ -1,3 +1,7 @@
+- Open Accounting > Configuration > Add a Bank Account and in the dialog choose "Record transactions manually"
+- Enter the new Bank Account and save it, open Accounting > Configuration > Journals
+- Choose the newly created bank account and set the currency to USD
+- Repeat the steps to create another bank account with currency EUR
 - Open Sales > Orders > Quotations, create a new quotation for Azure Interior
 - Confirm the Sales Order and proceed to delivery
 - Validate the delivery and issue an invoice, under Other Info tab, the Recipient Bank is set according to the currency of the Invoice
