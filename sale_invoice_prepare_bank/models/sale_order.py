@@ -12,7 +12,7 @@ class SaleOrder(models.Model):
         res = super()._prepare_invoice()
         company = self.env.company or self.company_id
         bank_ids = company.partner_id.bank_ids.filtered(
-            lambda bank: bank.company_id is False or bank.company_id == company
+            lambda bank: not bank.company_id or bank.company_id == company
         )
         bank_currency_ids = bank_ids.filtered(
             lambda bank: bank.currency_id == self.currency_id
