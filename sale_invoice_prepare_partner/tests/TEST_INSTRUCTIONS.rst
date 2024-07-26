@@ -1,3 +1,4 @@
-- Open Sales > Orders > Quotations, create a new quotation for Azure Interior
+- Open Azure Interior contact, in the Contacts&Addresses tab enter the Invoice Address
+- Open Sales > Orders > Quotations, create a new quotation for Azure Interior, the Invoice Address field is set from the contact
 - Confirm the Sales Order and proceed to delivery
-- Validate the delivery and issue an invoice, the Sale Contact Address field can be set on the invoice
+- Validate the delivery and issue an invoice, the Invoice Address field is copied to the invoice
