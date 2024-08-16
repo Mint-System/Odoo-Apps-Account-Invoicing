@@ -1,7 +1,7 @@
 {
     "name": "Account Move Reconciled Date",
     "summary": """
-        Show reconcile date of bank statement for account move.
+        Show latest reconsiliation date of account move.
     """,
     "author": "Mint System GmbH, Odoo Community Association (OCA)",
     "website": "https://www.mint-system.ch",

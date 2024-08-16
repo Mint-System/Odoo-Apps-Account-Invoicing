@@ -6,7 +6,7 @@
 Account Move Reconciled Date
 ============================
 
-Show reconcile date of bank statement for account move.
+Show latest reconsiliation date of account move.
 
 For a detailed documentation have a look at https://www.odoo-wiki.org/.
 

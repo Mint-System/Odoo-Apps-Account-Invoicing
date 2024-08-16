@@ -13,23 +13,8 @@ class AccountMove(models.Model):
     @api.depends("payment_state")
     def _compute_get_reconcile_date(self):
         for move in self:
-            reconcilation_dates = []
-            # Get reconciliation infos
-            for (
-                partial,
-                amount,
-                counterpart_line,
-            ) in move._get_reconciled_invoices_partials():
-                # Get all lines from payment move
-                for line in counterpart_line.move_id.line_ids:
-                    # Get reconcilation lines where bank statement is give
-                    reconcile_lines = (
-                        self.env["account.move.line"]
-                        .browse(line._reconciled_lines())
-                        .filtered(lambda l: l.statement_id)
-                    )
-                    reconcilation_dates.extend(reconcile_lines.mapped("date"))
-
-            move.reconcile_date = (
-                max(reconcilation_dates) if reconcilation_dates else None
+            move_lines = self.env["account.move.line"].browse(
+                move.line_ids._reconciled_lines()
             )
+            if move_lines:
+                move.reconcile_date = max(move_lines.mapped("date"))
