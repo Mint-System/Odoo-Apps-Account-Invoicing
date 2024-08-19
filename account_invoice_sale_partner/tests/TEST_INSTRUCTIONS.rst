@@ -1,0 +1,3 @@
+- Open Contacts > Deco Addict, under the Contacts&Addresses set the Sale Contact Address
+- Open Invoicing > Customers > Invoces
+- Create a new invoice for Deco Addict, in the new field Sale Contact Address the newly created address is set
