@@ -12,10 +12,10 @@ class AccountMove(models.Model):
         default=True,
     )
 
-    def _compute_l10n_ch_is_qr_valid(self):
+    def _compute_l10n_ch_qr_is_valid(self):
         """Set QR code validity based on enable_ch_qr_code field."""
-        result = super()._compute_l10n_ch_is_qr_valid()
+        result = super()._compute_l10n_ch_qr_is_valid()
         for move in self:
             if not move.enable_ch_qr_code:
-                move.l10n_ch_is_qr_valid = False
+                move.l10n_ch_qr_is_valid = False
         return result
