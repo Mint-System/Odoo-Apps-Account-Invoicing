@@ -3,12 +3,12 @@
     :alt: License: GPL-3
 
 ============================
-Account Invoice Sale Partner
+Sale Invoice Prepare Partner
 ============================
 
-Set sale order contact on invoice.
+Copy invoice and shipping contacts to invoice.
 
-For a detailed documentation have a look at https://www.odoo-wiki.org/account-invoice-sale-partner.html
+For a detailed documentation have a look at https://www.odoo-wiki.org/sale-invoice-prepare-partner.html
 
 Configuration
 ~~~~~~~~~~~~~

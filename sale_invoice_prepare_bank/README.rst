@@ -2,13 +2,13 @@
     :target: http://www.gnu.org/licenses/gpl-3.0-standalone.html
     :alt: License: GPL-3
 
-============================
-Account Invoice Sale Partner
-============================
+=========================
+Sale Invoice Prepare Bank
+=========================
 
-Set sale order contact on invoice.
+Set bank on invoice by matching currency.
 
-For a detailed documentation have a look at https://www.odoo-wiki.org/account-invoice-sale-partner.html
+For a detailed documentation have a look at https://www.odoo-wiki.org/sale-invoice-prepare-bank.html
 
 Configuration
 ~~~~~~~~~~~~~
