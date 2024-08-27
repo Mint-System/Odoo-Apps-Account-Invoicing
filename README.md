@@ -25,6 +25,9 @@ git clone git@github.com:mint-system/odoo-apps-account-invoicing.git ./addons/ac
 | [account_invoice_select_bank](account_invoice_select_bank) |         Select bank by matching currency of invoice. |
 | [account_move_invoice_partner](account_move_invoice_partner) |         Separate field for invoice address. |
 | [account_move_line_position](account_move_line_position) |         Enable line position number and link from purchase or sale order. |
-| [account_move_reconciled_date](account_move_reconciled_date) |         Show reconcile date of bank statement for account move. |
+| [account_move_reconciled_date](account_move_reconciled_date) |         Show latest reconsiliation date of account move. |
+| [l10n_ch_disable_default_reports](l10n_ch_disable_default_reports) |         Disable QR and ISR report generation. |
+| [sale_invoice_carrier](sale_invoice_carrier) |         Set delivery method of transfer when creating invoice from sale order. |
 | [sale_invoice_cash_rounding_default](sale_invoice_cash_rounding_default) |         Apply default cash rounding when invoicing sale orders. |
 | [sale_invoice_ignore_ref](sale_invoice_ignore_ref) |         Ignore customer ref when invoicing sale orders. |
+| [sale_invoice_line_description](sale_invoice_line_description) |         When invoicing a sale order use product reference and name as line description. |
