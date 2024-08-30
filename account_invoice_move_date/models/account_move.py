@@ -23,6 +23,6 @@ class AccountMove(models.Model):
         """Return move date as accounting date."""
         res = super()._get_accounting_date(invoice_date, has_tax)
         # Return move date if type is outgoing invoice
-        if move.date and move.move_type == "out_invoice":
-            return move.date
+        if self.date and self.move_type == "out_invoice":
+            return self.date
         return res
