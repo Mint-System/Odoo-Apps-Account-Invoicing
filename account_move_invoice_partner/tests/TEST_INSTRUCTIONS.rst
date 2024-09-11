@@ -1,0 +1,5 @@
+- Install the module
+- The module adds a new field on the invoice form - "Invoice Address" (partner_invoice_id)
+- Open a company contact and add an Invoice Address
+- Create a new invoice, choose the company
+- The new field is added and Invoice Address will be inserted automatically

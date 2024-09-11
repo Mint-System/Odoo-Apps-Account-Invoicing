@@ -16,13 +16,20 @@ git clone git@github.com:mint-system/odoo-apps-account-invoicing.git ./addons/ac
 | --- | --- |
 | [account_followup_mail_layout](account_followup_mail_layout) |         Use email layout for followup mails. |
 | [account_followup_manual_reminder](account_followup_manual_reminder) |         Set default reminder type on partner to manual. |
+| [account_invoice_carrier](account_invoice_carrier) |         Set delivery method on invoice. |
 | [account_invoice_comment](account_invoice_comment) |         Comment field in invoice. |
 | [account_invoice_move_date](account_invoice_move_date) |         Set move date independent of invoice date. |
+| [account_invoice_notes](account_invoice_notes) |         Footer and header notes for invoice that are copied from sale order. |
 | [account_invoice_outstanding_credit](account_invoice_outstanding_credit) |         Filter customer invoices with open credits. |
 | [account_invoice_sale_partner](account_invoice_sale_partner) |         Set sale order contact on invoice. |
 | [account_invoice_select_bank](account_invoice_select_bank) |         Select bank by matching currency of invoice. |
 | [account_move_line_accounting_description_stock](account_move_line_accounting_description_stock) |         Copy stock move description to external name on invoice creation. |
+| [account_move_invoice_partner](account_move_invoice_partner) |         Separate field for invoice address. |
 | [account_move_line_position](account_move_line_position) |         Enable line position number and link from purchase or sale order. |
-| [account_move_reconciled_date](account_move_reconciled_date) |         Show reconcile date of bank statement for account move. |
+| [l10n_ch_disable_default_reports](l10n_ch_disable_default_reports) |         Disable QR and ISR report generation. |
+| [sale_invoice_carrier](sale_invoice_carrier) |         Set delivery method of transfer when creating invoice from sale order. |
 | [sale_invoice_cash_rounding_default](sale_invoice_cash_rounding_default) |         Apply default cash rounding when invoicing sale orders. |
 | [sale_invoice_ignore_ref](sale_invoice_ignore_ref) |         Ignore customer ref when invoicing sale orders. |
+| [sale_invoice_line_description](sale_invoice_line_description) |         When invoicing a sale order use product reference and name as line description. |
+| [sale_invoice_prepare_bank](sale_invoice_prepare_bank) |         Set bank on invoice by matching currency. |
+| [sale_invoice_prepare_partner](sale_invoice_prepare_partner) |         Copy invoice and shipping contacts to invoice. |

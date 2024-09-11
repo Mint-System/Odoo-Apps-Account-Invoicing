@@ -1,0 +1,6 @@
+- Select company "CH Company"
+- Open the invoice "RE/2024/00004"
+- Change country of "Deco Addict" to "Switzerland"
+- Print the invoice and ensure the swiss QR-bill is not appended
+- Activate the option "Enable Swiss QR-bill"
+- Print the invoice and ensure the swiss QR-bill is appended

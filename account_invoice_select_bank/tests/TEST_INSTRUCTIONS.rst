@@ -1,0 +1,6 @@
+- Open Invoicing > Configuration > Banks > Add a new bank account
+- Create a new bank account with currency EUR
+- Add another new bank account with currency USD
+- Create a new Invoice for Deco Addict
+- Open the Other Information tab, there is a Recipient Bank field which should reflect one of the newly created bank accounts according to the currency of invoice
+- When the bank account of the invoice is changed, it is also changed in the Recipient Bank field
