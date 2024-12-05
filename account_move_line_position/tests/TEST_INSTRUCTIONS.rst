@@ -1,0 +1,9 @@
+- Open Settings > Invoicing > Customer Invoices and enable the flag on "Position Numbers from Orders"
+- Open Sales > Orders > Quotations and create a new quotation for Azure Interior
+- Add 2-3 different product lines, under Action press Set Position Numbers and enable the field in the product list to see them
+- Confirm the quotation and create a Sales Order, confirm the order and deliver products
+- Create an invoice, the position numbers of product lines is same as in the Sales Order
+- Open Purchase > Orders > Purchase Orders and create a new order for Azure Interior
+- Add 2-3 different product lines, under Action press Set Position Numbers and enable the field in the product list to see them
+- Confirm the order and delivery of products
+- Create an invoice, the position numbers of product lines is same as in the Purcahse Order
