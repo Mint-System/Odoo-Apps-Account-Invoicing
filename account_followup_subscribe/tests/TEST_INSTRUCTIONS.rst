@@ -1,0 +1,5 @@
+- Open the followup level "15 Days" and then open the mail template "Payment Reminder"
+- Update the from field with "odoo@example.com"
+- Open "Follow-up Reports" and open the first contact
+- Click "Followup" and send the mail
+- Check if the current user is added to the follower list

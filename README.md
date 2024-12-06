@@ -18,6 +18,7 @@ git clone git@github.com:mint-system/odoo-apps-account-invoicing.git ./addons/ac
 | [account_followup_mail_layout](account_followup_mail_layout) |         Use email layout for followup mails. |
 | [account_followup_manual_reminder](account_followup_manual_reminder) |         Set default reminder type on partner to manual. |
 | [account_followup_print_false](account_followup_print_false) |         Set print option to false in followup dialog. |
+| [account_followup_subscribe](account_followup_subscribe) |         When sending followup mail subscribe contacts defined in template domain. |
 | [account_invoice_carrier](account_invoice_carrier) |         Set delivery method on invoice. |
 | [account_invoice_comment](account_invoice_comment) |         Comment field in invoice. |
 | [account_invoice_move_date](account_invoice_move_date) |         Set move date independent of invoice date. |
