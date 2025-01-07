@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+        <template
+        inherit_id="account_followup.report_followup_print_all"
+        id="table_format"
+    >
+            <t t-call-assets="account_followup.assets_followup_report" position="after">
+                <style>
+                table.o_account_reports_table {
+                    white-space: nowrap;
+                }
+
+                table.o_account_reports_table th:nth-child(1) div {
+                    margin-left: 8px;
+                }
+
+                table.o_account_reports_table th:nth-child(3),
+                table.o_account_reports_table td:nth-child(3),
+                table.o_account_reports_table th:nth-child(4),
+                table.o_account_reports_table td:nth-child(4) {
+                    display: none;
+                }
+
+                table.o_account_reports_table th:nth-child(6),
+                table.o_account_reports_table td:nth-child(6),
+                table.o_account_reports_table tbody tr:nth-last-child(2),
+                table.o_account_reports_table tbody tr:last-child {
+                    text-align: right;
+                }
+                
+                </style>
+            </t>
+        </template>
+
+</odoo>
