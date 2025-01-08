@@ -20,7 +20,7 @@ msgstr ""
 #: code:addons/account_followup_report_light/models/account_followup_report.py:0
 #, python-format
 msgid "Communication"
-msgstr "Kommunikation"
+msgstr "Referenz-Nr."
 
 #. module: account_followup_report_light
 #. odoo-python
@@ -53,7 +53,7 @@ msgstr "Herkunft"
 #: code:addons/account_followup_report_light/models/account_followup_report.py:0
 #, python-format
 msgid "Reference"
-msgstr "Referenz"
+msgstr "Rechnung"
 
 #. module: account_followup_report_light
 #. odoo-python
