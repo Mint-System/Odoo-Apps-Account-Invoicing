@@ -28,7 +28,7 @@
                 table.o_account_reports_table tbody tr:last-child {
                     text-align: right;
                 }
-                
+
                 </style>
             </t>
         </template>
