@@ -22,12 +22,30 @@ class AccountMove(models.Model):
         invoices = self.env["account.move"].search(domain)
         return invoices
 
-    def has_unreconciled_credit_move_lines(self):
+    def has_outstanding_credit_move_lines(self):
+        """
+        Check if move invoice has outstanding move lines by:
+        - Matching the partner
+        - Filter receivable accounts
+        - Check move lines by posted moves only
+        - Ensure credit is given
+        - And residual amount is zero
+        """
+        self.ensure_one()
+
+        # Get ids of receivable accounts and id of default payment account
+        receivable_account_ids = self.env["account.account"].search(
+            [("account_type", "=", "asset_receivable")]
+        )
+        receivable_account_ids += (
+            self.company_id.account_journal_payment_debit_account_id
+        )
+
         domain = [
             ("partner_id", "=", self.commercial_partner_id.id),
-            ("move_type", "=", "out_refund"),
+            ("account_id", "in", receivable_account_ids.ids),
             ("parent_state", "=", "posted"),
-            ("account_id.reconcile", "=", True),
+            ("credit", ">", 0),
             ("amount_residual", "!=", 0),
         ]
         credit_move_lines = self.env["account.move.line"].search_count(domain)
@@ -39,7 +57,7 @@ class AccountMove(models.Model):
         When an outgoing invoice is updated compute the oustanding credits field.
         """
         for move in self:
-            if move.has_unreconciled_credit_move_lines() and move.payment_state not in [
+            if move.has_outstanding_credit_move_lines() and move.payment_state not in [
                 "paid",
                 "reversed",
             ]:
