@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="customer_statements_search_view" model="ir.ui.view">
+        <field
+            name="name"
+        >account_followup_filter_blocked.customer_statements_search_view</field>
+        <field name="model">res.partner</field>
+        <field
+            name="inherit_id"
+            ref="account_followup.customer_statements_search_view"
+        />
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <filter name="filter_in_need_of_action" position="after">
+                <filter
+                    string="Has blocked invoices"
+                    name="filter_has_blocked_aml"
+                    domain="[('has_blocked_aml', '=', True)]"
+                />
+            </filter>
+        </field>
+    </record>
+
+</odoo>

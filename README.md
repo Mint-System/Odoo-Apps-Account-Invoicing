@@ -15,6 +15,7 @@ git clone git@github.com:mint-system/odoo-apps-account-invoicing.git ./addons/ac
 | Module | Summary |
 | --- | --- |
 | [account_followup_due_filter](account_followup_due_filter) |         Show only invoices that are due in the followup report. |
+| [account_followup_filter_blocked](account_followup_filter_blocked) |         Filter followup contacts with blocked invoices. |
 | [account_followup_mail_layout](account_followup_mail_layout) |         Use email layout for followup mails. |
 | [account_followup_manual_reminder](account_followup_manual_reminder) |         Set default reminder type on partner to manual. |
 | [account_followup_print_false](account_followup_print_false) |         Set print option to false in followup dialog. |
