@@ -3,7 +3,7 @@
     "summary": """
         Show reconcile date of bank statement for account move.
     """,
-    "author": "Mint System GmbH, Odoo Community Association (OCA)",
+    "author": "Mint System GmbH",
     "website": "https://www.mint-system.ch",
     "category": "Accounting",
     "version": "14.0.1.0.1",
