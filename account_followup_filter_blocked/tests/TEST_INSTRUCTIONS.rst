@@ -1,0 +1,4 @@
+- Open first entry of followup report
+- Block the first invoice line
+- Return to list view and select filter "has blocked invoices"
+- Check if the contact with the blocked line is showing up
