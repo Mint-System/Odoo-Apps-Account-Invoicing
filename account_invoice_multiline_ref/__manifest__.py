@@ -1,0 +1,16 @@
+{
+    "name": "Account Invoice Multiline Ref",
+    "summary": """
+        Enable multiline text for client order and inovice ref.
+    """,
+    "author": "Mint System GmbH",
+    "website": "https://www.mint-system.ch",
+    "category": "Invoicing",
+    "version": "17.0.1.0.0",
+    "license": "AGPL-3",
+    "depends": ["account", "sale"],
+    "installable": True,
+    "application": False,
+    "auto_install": False,
+    "images": ["images/screen.png"],
+}
