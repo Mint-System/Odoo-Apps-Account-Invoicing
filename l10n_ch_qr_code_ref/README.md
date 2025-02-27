@@ -1,5 +1,5 @@
 ## Available modules
 
-| Module | Summary |
-| --- | --- |
-| [*](*) |  |
+| Module  | Summary |
+| ------- | ------- |
+| [\*](*) |         |

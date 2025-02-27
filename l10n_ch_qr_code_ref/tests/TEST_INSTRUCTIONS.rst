@@ -5,7 +5,7 @@ Setup:
 - Open Invoicing App
 - Goto Configuration > Settings menu
 - Click "QR Codes" in "Customer Payments" section
-- Save changes 
+- Save changes
 
 Check QR Code:
 
@@ -15,7 +15,7 @@ Check QR Code:
 - Add Invoice Line with arbitrary product
 - Check currency set to "CHF"
 - Open tab "Other Info"
-- Set "Payment QR-Code" to "Swiss QR Bill" 
+- Set "Payment QR-Code" to "Swiss QR Bill"
 - Open Preview of invoice
 - Download Invoice
 - Check if beside QR code on last Page "Zusätzliche Informationen $InvoiceName" is shown

@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version='1.0' encoding='UTF-8' ?>
 <odoo>
 
   <template id="l10n_ch_swissqr_template" inherit_id="l10n_ch.l10n_ch_swissqr_template">
