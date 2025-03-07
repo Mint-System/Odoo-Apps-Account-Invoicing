@@ -6,7 +6,7 @@
     "author": "Mint System GmbH",
     "website": "https://www.mint-system.ch",
     "category": "Accounting",
-    "version": "17.0.1.0.0",
+    "version": "17.0.2.0.2",
     "license": "AGPL-3",
     "depends": ["account"],
     "data": ["views/report_invoice_document.xml", "views/account_move.xml"],
