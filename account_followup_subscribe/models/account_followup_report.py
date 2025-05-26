@@ -14,9 +14,7 @@ class AccountFollowupReport(models.AbstractModel):
         if partner_id:
             followup_line = options.get("followup_line", partner_id.followup_line_id)
             if followup_line:
-                template_id = (
-                    options.get("mail_template") or followup_line.mail_template_id
-                )
+                template_id = options.get("mail_template") or followup_line.mail_template_id
                 if template_id:
                     subscriber_ids = template_id.get_subscriber_ids()
                     if subscriber_ids:

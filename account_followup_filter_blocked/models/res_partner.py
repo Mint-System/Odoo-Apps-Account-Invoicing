@@ -17,6 +17,4 @@ class ResPartner(models.Model):
     @api.depends("invoice_ids.line_ids.blocked")
     def _compute_has_blocked_aml(self):
         for partner in self:
-            partner.has_blocked_aml = any(
-                partner.unreconciled_aml_ids.mapped("blocked")
-            )
+            partner.has_blocked_aml = any(partner.unreconciled_aml_ids.mapped("blocked"))

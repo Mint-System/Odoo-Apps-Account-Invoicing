@@ -10,18 +10,12 @@ class AccountMove(models.Model):
 
     def set_position(self):
         get_positions_from_orders = (
-            self.env["ir.config_parameter"]
-            .sudo()
-            .get_param("account.get_positions_from_orders")
+            self.env["ir.config_parameter"].sudo().get_param("account.get_positions_from_orders", True)
         )
         for move in self:
             position = 0
-            for line in move.invoice_line_ids.filtered(
-                lambda l: not l.display_type
-            ).sorted("sequence"):
-                if get_positions_from_orders and (
-                    line.sale_line_ids or line.purchase_line_id
-                ):
+            for line in move.invoice_line_ids.filtered(lambda l: l.display_type == "product").sorted("sequence"):
+                if get_positions_from_orders and (line.sale_line_ids or line.purchase_line_id):
                     line._compute_get_position()
                     position = int(line.position)
                 else:
@@ -43,16 +37,12 @@ class AccountMove(models.Model):
 class AccountMoveLine(models.Model):
     _inherit = "account.move.line"
 
-    position = fields.Char(
-        "Pos", compute="_compute_get_position", store=True, readonly=True
-    )
+    position = fields.Char("Pos", compute="_compute_get_position", store=True, readonly=True)
 
     @api.depends("purchase_line_id", "sale_line_ids")
     def _compute_get_position(self):
         get_positions_from_orders = (
-            self.env["ir.config_parameter"]
-            .sudo()
-            .get_param("account.get_positions_from_orders")
+            self.env["ir.config_parameter"].sudo().get_param("account.get_positions_from_orders", True)
         )
         for rec in self:
             if rec.sale_line_ids and get_positions_from_orders:

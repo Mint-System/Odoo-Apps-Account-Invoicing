@@ -4,7 +4,7 @@
         Enable line position number and link from purchase or sale order.
     """,
     "author": "Mint System GmbH",
-    "website": "https://www.mint-system.ch",
+    "website": "https://www.mint-system.ch/",
     "category": "Accounting",
     "version": "16.0.1.0.0",
     "license": "AGPL-3",

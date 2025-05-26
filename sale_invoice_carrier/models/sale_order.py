@@ -12,9 +12,7 @@ class SaleOrder(models.Model):
         moves = super()._create_invoices(grouped=grouped, final=final, date=date)
 
         # Get latest picking that is not cancelled and has a carrier set
-        pickings = self.picking_ids.filtered(
-            lambda p: p.state not in ["cancel"] and p.carrier_id
-        )[:1]
+        pickings = self.picking_ids.filtered(lambda p: p.state not in ["cancel"] and p.carrier_id)[:1]
         # Set carrier if picking has been found
         if pickings:
             moves.update({"carrier_id": pickings[0].carrier_id.id})

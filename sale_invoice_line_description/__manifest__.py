@@ -4,7 +4,7 @@
         When invoicing a sale order use product reference and name as line description.
     """,
     "author": "Mint System GmbH",
-    "website": "https://www.mint-system.ch",
+    "website": "https://www.mint-system.ch/",
     "category": "Accounting",
     "version": "16.0.1.0.0",
     "license": "AGPL-3",

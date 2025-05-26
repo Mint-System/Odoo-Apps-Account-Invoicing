@@ -22,22 +22,16 @@ class AccountFollowupReport(models.AbstractModel):
             email = to_send_partner.email
             if email and email.strip():
                 self = self.with_context(lang=partner.lang or self.env.user.lang)
-                body_html = self.with_context(mail=True).get_followup_report_html(
-                    options
-                )
+                body_html = self.with_context(mail=True).get_followup_report_html(options)
 
                 attachment_ids = options.get(
                     "attachment_ids",
-                    partner._get_invoices_to_print(
-                        options
-                    ).message_main_attachment_id.ids,
+                    partner._get_invoices_to_print(options).message_main_attachment_id.ids,
                 )
                 email_from = (
                     self.env["mail.composer.mixin"]
                     .sudo()
-                    ._render_template(
-                        options.get("email_from"), "res.partner", [partner.id]
-                    )[partner.id]
+                    ._render_template(options.get("email_from"), "res.partner", [partner.id])[partner.id]
                 )
 
                 partner.with_context(

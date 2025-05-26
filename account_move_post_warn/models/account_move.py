@@ -19,11 +19,7 @@ class AccountMove(models.Model):
                 p = p.parent_id
             if p.invoice_warn and p.invoice_warn != "no-message":
                 # Block if partner only has warning but parent company is blocked
-                if (
-                    p.invoice_warn != "block"
-                    and p.parent_id
-                    and p.parent_id.invoice_warn == "block"
-                ):
+                if p.invoice_warn != "block" and p.parent_id and p.parent_id.invoice_warn == "block":
                     p = p.parent_id
                 warning = {
                     "title": _("Warning for %s", p.name),

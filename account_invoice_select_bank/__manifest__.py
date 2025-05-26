@@ -4,7 +4,7 @@
         Select bank by matching currency of invoice.
     """,
     "author": "Mint System GmbH",
-    "website": "https://www.mint-system.ch",
+    "website": "https://www.mint-system.ch/",
     "category": "Invoicing",
     "version": "16.0.1.1.0",
     "license": "AGPL-3",
