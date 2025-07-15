@@ -13,6 +13,7 @@ class AccountMove(models.Model):
         if self.journal_id.invoice_reference_type == 'none' and self.currency_id.invoice_reference_model == 'none':
             return ''
         if self.currency_id.invoice_reference_model:
+            _logger.info("currency_id.invoice_reference_model: %s" % (self.currency_id.invoice_reference_model,))
             ref_function = getattr(self, f'_get_invoice_reference_{self.currency_id.invoice_reference_model}_{self.currency_id.invoice_reference_type}', None)
         else:
             ref_function = getattr(self, f'_get_invoice_reference_{self.journal_id.invoice_reference_model}_{self.journal_id.invoice_reference_type}', None)
