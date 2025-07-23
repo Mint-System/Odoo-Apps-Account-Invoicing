@@ -28,11 +28,6 @@ class AccountFollowupReport(models.AbstractModel):
                     "attachment_ids",
                     partner._get_invoices_to_print(options).message_main_attachment_id.ids,
                 )
-                email_from = (
-                    self.env["mail.composer.mixin"]
-                    .sudo()
-                    ._render_template(options.get("email_from"), "res.partner", [partner.id])[partner.id]
-                )
 
                 partner.with_context(
                     mail_post_autofollow=True,
@@ -41,7 +36,7 @@ class AccountFollowupReport(models.AbstractModel):
                 ).message_post(
                     partner_ids=[to_send_partner.id],
                     author_id=partner._get_followup_responsible().partner_id.id,
-                    email_from=email_from or None,
+                    email_from=self._get_email_from(options) or None,
                     body=body_html,
                     subject=self._get_email_subject(options),
                     reply_to=self._get_email_reply_to(options),
