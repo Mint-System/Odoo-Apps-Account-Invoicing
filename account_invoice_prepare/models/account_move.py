@@ -18,3 +18,4 @@ class AccountMove(models.Model):
             content, _content_type = self.env["ir.actions.report"]._render_qweb_pdf(
                 invoices_report, res_ids=[invoice.id]
             )
+            invoice.print_date = fields.Datetime.now()
