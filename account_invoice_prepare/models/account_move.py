@@ -15,6 +15,10 @@ class AccountMove(models.Model):
     def action_prepare_pdf(self):
         invoices_report = self.env.ref("account.account_invoices")
         for invoice in self:
+            filename = invoice._get_report_attachment_filename()
+            self.env["ir.attachment"].search(
+                [("res_id", "=", invoice.id), ("res_model", "=", "account.move"), ("name", "=", filename)]
+            ).unlink()
             content, _content_type = self.env["ir.actions.report"]._render_qweb_pdf(
                 invoices_report, res_ids=[invoice.id]
             )
