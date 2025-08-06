@@ -14,6 +14,7 @@ git clone git@github.com:mint-system/odoo-apps-account-invoicing.git ./addons/ac
 
 | Module | Summary |
 | --- | --- |
+| [account_currency_communication](account_currency_communication) |         Makes Configuration of Communication Standard on Currency possible. |
 | [account_followup_due_filter](account_followup_due_filter) |         Show only invoices that are due in the followup report. |
 | [account_followup_filter_blocked](account_followup_filter_blocked) |         Filter followup contacts with blocked invoices. |
 | [account_followup_mail_layout](account_followup_mail_layout) |         Use email layout for followup mails. |
