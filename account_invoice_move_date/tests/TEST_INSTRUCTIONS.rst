@@ -1,0 +1,5 @@
+- Create an invoice for "Deco Addict"
+- Add a random product
+- Set a invoice and a post date
+- Post the invoice
+- Check that the invoice and post date are as defined
