@@ -9,7 +9,9 @@
                 expr="//group[@id='header_right_group']/field[@name='date']"
                 position="attributes"
             >
-                <attribute name="invisible">move_type in ('out_refund', 'out_receipt') and not quick_edit_mode</attribute>
+                <attribute
+                    name="invisible"
+                >move_type in ('out_refund', 'out_receipt') and not quick_edit_mode</attribute>
                 <attribute name="readonly">state != 'draft'</attribute>
             </xpath>
         </field>
