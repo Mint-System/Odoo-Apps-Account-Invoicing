@@ -1,0 +1,9 @@
+- Open unpaid customer invoice
+- Change customer ref
+- Run prepare pdf action
+- Check if customer ref is in invoice
+- Then remove customer ref
+- Run the cron action “Rechnungsstellung: PDF-Dateien erneuern”
+- Open the invoice again
+- Check if comment “Unlink and recreate invoice pdf file.” has been added
+- Check if pdf does not the customer ref
