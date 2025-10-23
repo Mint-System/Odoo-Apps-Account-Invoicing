@@ -1,0 +1,5 @@
+- Install sale_order_comment
+- Activate the copy option in the settings
+- Open a uninvoiced sale order and add a comment
+- Creat invoice from so
+- Check if comment has been copied

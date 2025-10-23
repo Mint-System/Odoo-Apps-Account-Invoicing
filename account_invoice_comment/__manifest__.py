@@ -1,14 +1,15 @@
 {
-    "name": "Account Invoice Select Bank",
+    "name": "Account Invoice Comment",
     "summary": """
-        Select bank by matching currency of invoice.
+        Comment field in invoice.
     """,
     "author": "Mint System GmbH",
     "website": "https://www.mint-system.ch/",
-    "category": "Invoicing",
-    "version": "18.0.1.1.0",
+    "category": "Accounting",
+    "version": "18.0.1.0.0",
     "license": "AGPL-3",
-    "depends": ["account"],
+    "depends": ["account", "sale"],
+    "data": ["views/account.xml", "views/res_config_settings_views.xml"],
     "installable": True,
     "application": False,
     "auto_install": False,
