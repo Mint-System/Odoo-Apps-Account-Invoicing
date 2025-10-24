@@ -15,6 +15,7 @@ git clone git@github.com:Mint-System/Odoo-Apps-Account-Invoicing.git ./addons/ac
 | Module | Summary |
 | --- | --- |
 | [account_followup_due_filter](account_followup_due_filter) |         Show only invoices that are due in the followup report. |
+| [account_followup_subscribe](account_followup_subscribe) |         When sending followup mail subscribe contacts defined in template domain. |
 | [account_invoice_comment](account_invoice_comment) |         Comment field in invoice. |
 | [account_invoice_move_date](account_invoice_move_date) |         Set move date independent of invoice date. |
 | [account_invoice_outstanding_credit](account_invoice_outstanding_credit) |         Filter customer invoices with open credits. |
