@@ -1,0 +1,1 @@
+When an invoice is posted show the warning message from the partner.

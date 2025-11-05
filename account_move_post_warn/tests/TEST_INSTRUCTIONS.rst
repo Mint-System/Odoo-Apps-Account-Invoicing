@@ -1,0 +1,4 @@
+- Open Setting > Invoicing and in Customer Invoices section enable Warnings flag
+- Open Contacts and edit the contact for Azure Interior
+- In the Internal Notes tab go to Warning on Invoice section and set a Warning with text "TEST"
+- Create a new invoice for Azure Interior, the warning message will be posted in chatter
