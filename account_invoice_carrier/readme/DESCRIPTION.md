@@ -1,0 +1,1 @@
+Set delivery method on invoice.

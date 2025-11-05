@@ -1,8 +1,8 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version='1.0' encoding='UTF-8' ?>
 <odoo>
     <template id="report_invoice_document" inherit_id="account.report_invoice_document">
         <xpath expr="//h2" position="after">
-            <p t-if="o.description" name="description" t-field="o.description"/>
+            <p t-if="o.description" name="description" t-field="o.description" />
         </xpath>
     </template>
 </odoo>
