@@ -1,0 +1,6 @@
+- Install module.
+- Navigate to Settings>Invoicing>Customer Invoices.
+- Activate *Copy Sale Order Comment*.
+- Open Invoice and go to tab *Other Info*.
+- Insert comment or modify existing comment.
+- Check to see if the action is logged in Chatter.
