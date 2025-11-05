@@ -1,15 +1,15 @@
 {
-    "name": "Account Invoice Comment",
+    "name": "Account Invoice Notes",
     "summary": """
-        Comment field in invoice.
+        Footer and header notes for invoice that are copied from sale order.
     """,
     "author": "Mint System GmbH",
     "website": "https://www.mint-system.ch",
     "category": "Accounting",
-    "version": "17.0.1.1.0",
+    "version": "17.0.1.0.0",
     "license": "AGPL-3",
-    "depends": ["account", "sale"],
-    "data": ["views/account.xml", "views/res_config_settings_views.xml"],
+    "depends": ["sale_order_notes"],
+    "data": ["views/view_move_form.xml"],
     "installable": True,
     "application": False,
     "auto_install": False,

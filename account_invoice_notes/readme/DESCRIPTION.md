@@ -1,0 +1,1 @@
+Footer and header notes for invoice that are copied from sale order.

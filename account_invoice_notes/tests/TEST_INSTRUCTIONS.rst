@@ -1,0 +1,4 @@
+- Create a sale order with any product and partner
+- Define notes in the notes tab
+- Confirm the sale order and create the invoice
+- Check if the same notes are available in the invoice
