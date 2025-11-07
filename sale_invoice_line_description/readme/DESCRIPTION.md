@@ -1,0 +1,1 @@
+When invoicing a sale order use product reference and name as line description.

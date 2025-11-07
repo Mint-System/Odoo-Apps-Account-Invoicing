@@ -1,0 +1,4 @@
+- Open Sales > Orders > Quotations, create a new quotation for Azure Interior
+- Enter "Pedal Bin" in the product line and change description to "TEST"
+- Confirm the Sales Order and proceed to delivery
+- Validate the delivery and issue an invoice, the invoice will not include the description "TEST", but will instead have the product Label, with the default product description
