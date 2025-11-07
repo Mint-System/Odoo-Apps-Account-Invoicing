@@ -1,0 +1,10 @@
+- Open Accounting > Configuration > Jornals and in the dialog choose "Record transactions manually"
+- Add new journal of Type *Bank*.
+- Either select an existing Account Number or create a new one.
+- Set currency e.g. to CHF.
+- Repeat the steps to create another journal of bank type with currency EUR.
+- Prepare pricelists in EUR and CHF.
+- Open Sales > Orders > Quotations, create a new quotation for Azure Interior.
+- Choose product and change pricelist to EUR or CHF.
+- Confirm the Sales Order and proceed to delivery.
+- Validate the delivery and issue an invoice, under Other Info tab, the Recipient Bank is set according to the currency of the Invoice.

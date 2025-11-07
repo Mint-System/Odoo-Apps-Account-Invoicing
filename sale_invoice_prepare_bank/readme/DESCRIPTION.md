@@ -1,0 +1,1 @@
+Set bank on invoice by matching currency.
