@@ -6,7 +6,7 @@
     <field name="model">account.move</field>
     <field name="inherit_id" ref="account.view_move_form" />
     <field name="arch" type="xml">
-      <xpath expr="//label[@for='journal_id']" position="after">
+      <xpath expr="//field[@name='delivery_date']" position="after">
         <field name="carrier_id" />
       </xpath>
     </field>

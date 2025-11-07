@@ -1,0 +1,1 @@
+Set delivery method of transfer when creating invoice from sale order.
