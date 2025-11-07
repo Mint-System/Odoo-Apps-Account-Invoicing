@@ -1,6 +1,7 @@
 import logging
 
-from odoo import models
+from odoo import _, models
+from odoo.exceptions import UserError
 
 _logger = logging.getLogger(__name__)
 
@@ -16,10 +17,6 @@ class AccountMove(models.Model):
         ):
             return ""
         if self.currency_id.invoice_reference_model:
-            _logger.info(
-                "currency_id.invoice_reference_model: %s"
-                % (self.currency_id.invoice_reference_model,)
-            )
             ref_function = getattr(
                 self,
                 f"_get_invoice_reference_{self.currency_id.invoice_reference_model}_{self.currency_id.invoice_reference_type}",

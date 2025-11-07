@@ -1,0 +1,4 @@
+- Open Sales > Orders > Quotations, create a new quotation for Azure Interior
+- Confirm the Sales Order and proceed to delivery
+- On the delivery order under the Additional Info tab choose the delivery method under Carrier field
+- Validate the delivery and issue an invoice, the invoice will reflect the chosen delivery method under the Delivery Method field
