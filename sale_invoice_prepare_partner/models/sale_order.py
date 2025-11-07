@@ -1,0 +1,17 @@
+import logging
+
+from odoo import models
+
+_logger = logging.getLogger(__name__)
+
+
+class SaleOrder(models.Model):
+    _inherit = "sale.order"
+
+    def _prepare_invoice(self):
+        res = super()._prepare_invoice()
+        if self.partner_invoice_id:
+            res["partner_invoice_id"] = self.partner_invoice_id.id
+        if self.partner_id:
+            res["partner_id"] = self.partner_id.id
+        return res

@@ -17,7 +17,7 @@ class AccountMove(models.Model):
         res = super()._compute_partner_bank_id()
         for move in self:
             bank_currency_id = move.bank_partner_id.bank_ids.filtered(
-                lambda bank: bank.currency_id == move.currency_id
+                lambda bank, move=move: bank.currency_id == move.currency_id
             )[:1]
             if bank_currency_id:
                 move.partner_bank_id = bank_currency_id[0]

@@ -17,7 +17,7 @@ class AccountMove(models.Model):
         for move in self:
             position = 0
             for line in move.invoice_line_ids.filtered(
-                lambda l: not l.display_type
+                lambda mvl: not mvl.display_type
             ).sorted("sequence"):
                 if get_positions_from_orders and (
                     line.sale_line_ids or line.purchase_line_id

@@ -31,7 +31,8 @@ class AccountMove(models.Model):
         if ref_function is None:
             raise UserError(
                 _(
-                    "The combination of reference model and reference type on the journal or currency is not implemented"
+                    "The combination of reference model and reference type "
+                    "on the journal or currency is not implemented"
                 )
             )
         return ref_function()
