@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="view_currency_form">
+        <field name="name">res.currency.form</field>
+        <field name="inherit_id" ref="base.view_currency_form" />
+        <field name="model">res.currency</field>
+        <field name="arch" type="xml">
+            <field name="currency_subunit_label" position="after">
+                <field name="invoice_reference_model" />
+            </field>
+        </field>
+    </record>
+</odoo>
