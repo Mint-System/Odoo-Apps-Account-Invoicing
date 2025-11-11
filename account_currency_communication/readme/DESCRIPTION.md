@@ -1,0 +1,1 @@
+Makes Configuration of Communication Standard on Currency possible.
