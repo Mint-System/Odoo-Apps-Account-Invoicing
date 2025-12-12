@@ -1,0 +1,1 @@
+Copy stock move description to external name on invoice creation.
