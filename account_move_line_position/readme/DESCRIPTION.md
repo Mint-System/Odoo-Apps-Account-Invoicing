@@ -1,0 +1,1 @@
+Enable line position number and link from purchase or sale order.
