@@ -1,0 +1,1 @@
+Copies the payment reference even for non-Swiss customers

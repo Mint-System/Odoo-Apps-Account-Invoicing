@@ -1,0 +1,5 @@
+- Activate Module.
+- Create Sale Order with currency CHF.
+- Create and confirm invoice.
+- Check that payment_reference is copied to invoice if it is defined on currency "CHF.
+- Check that this is independant of customer's country. 
