@@ -1,7 +1,6 @@
 import logging
-import re
 
-from odoo import _, api, models
+from odoo import _, models
 from odoo.exceptions import UserError
 
 _logger = logging.getLogger(__name__)
@@ -9,7 +8,6 @@ _logger = logging.getLogger(__name__)
 
 class AccountMove(models.Model):
     _inherit = "account.move"
-
 
     def _get_invoice_computed_reference(self):
         self.ensure_one()
@@ -32,7 +30,3 @@ class AccountMove(models.Model):
                 _("The combination of reference model and reference type on the journal or currency is not implemented")
             )
         return ref_function()
-
-
-
-

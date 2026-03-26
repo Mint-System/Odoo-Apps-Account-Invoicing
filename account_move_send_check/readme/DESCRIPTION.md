@@ -1,0 +1,1 @@
+Show note in send dialog if invoice is being or has been sent.

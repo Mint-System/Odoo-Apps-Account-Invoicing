@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="account_move_send_wizard_form" model="ir.ui.view">
+        <field name="name">account_move_send_check.account_move_send_wizard_form</field>
+        <field name="model">account.move.send.wizard</field>
+        <field name="inherit_id" ref="account.account_move_send_wizard_form" />
+        <field name="arch" type="xml">
+            <div id="alerts" position="after">
+                <div
+                    class="alert alert-warning mb-1"
+                    role="alert"
+                    invisible="not is_move_sent or is_being_sent"
+                >
+                    <i class="fa fa-exclamation-triangle me-1" />
+                    Note: this invoice has already been sent.
+                </div>
+                <div
+                    class="alert alert-warning mb-1"
+                    role="alert"
+                    invisible="not is_being_sent"
+                >
+                    <i class="fa fa-exclamation-triangle me-1" />
+                    Note: this invoice is currently being sent.
+                </div>
+            </div>
+        </field>
+    </record>
+</odoo>
