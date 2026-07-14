@@ -1,0 +1,4 @@
+- Open an invoice
+- Enter a text in the description field
+- Preview the invoice
+- Check if text is shown below the invoice title
