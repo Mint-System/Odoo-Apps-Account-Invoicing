@@ -13,6 +13,7 @@ class AccountMove(models.Model):
         string="Sale Contact Address",
         compute="_compute_partner_sale_id",
         store=True,
+        readonly=False,
     )
 
     @api.depends("partner_id")
