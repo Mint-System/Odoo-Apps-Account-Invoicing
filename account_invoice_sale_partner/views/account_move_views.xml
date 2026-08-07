@@ -7,7 +7,7 @@
     <field name="inherit_id" ref="account.view_move_form" />
     <field name="arch" type="xml">
       <field name="partner_shipping_id" position="before">
-        <field name="partner_sale_id" widget="res_partner_many2one" />
+        <field name="partner_sale_id" widget="res_partner_many2one" readonly="state != 'draft'" />
       </field>
     </field>
   </record>
