@@ -11,7 +11,7 @@ class AccountMove(models.Model):
     partner_invoice_id = fields.Many2one(
         "res.partner",
         string="Invoice Address",
-        readonly=True,
+        readonly=False,
         domain="['|', ('company_id', '=', False), ('company_id', '=', company_id)]",
         compute="_compute_partner_invoice_id",
         store=True,

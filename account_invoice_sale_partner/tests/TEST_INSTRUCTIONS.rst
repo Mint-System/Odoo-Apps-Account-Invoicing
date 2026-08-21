@@ -1,3 +1,4 @@
-- Open Contacts > Deco Addict, under the Contacts&Addresses set the Sale Contact Address
-- Open Invoicing > Customers > Invoces
-- Create a new invoice for Deco Addict, in the new field Sale Contact Address the newly created address is set
+- Open Contacts > any company (e.g. Gemini Furniture), under the Contacts&Addresses, click on an existing contact or add a new one, set the Sale Contact Address option
+- Open Invoicing > Customers > Invoices
+- Create a new invoice for the company (e.g. Gemini Furniture), in the new field Sale Contact Address, the newly created 'Sale Contact Address' is set
+- In the invoice, change the Sale Contact Address by clicking in the field
