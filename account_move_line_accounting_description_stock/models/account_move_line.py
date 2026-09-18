@@ -4,6 +4,12 @@ from odoo import fields, models, api
 class AccountMoveLine(models.Model):
     _inherit = "account.move.line"
 
+
+    external_name = fields.Text(
+        compute="_compute_name_fields",
+        store=True,
+    )
+
   
     @api.model_create_multi
     def create(self, vals_list):
