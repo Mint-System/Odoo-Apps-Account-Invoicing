@@ -1,44 +1,17 @@
 # Odoo Apps: Account Invoicing
 
-Collection of account and invoicing model related modules.
+Odoo modules extending the `account` module.
 
 ## Usage
 
-Clone module into Odoo addon directory.
+Clone this repo into the Odoo addons directory.
 
 ```bash
-git clone git@github.com:mint-system/odoo-apps-account-invoicing.git ./addons/account_invoicing
+git clone git@github.com:Mint-System/Odoo-Apps-Account-Invoicing.git ./addons/account_invoicing
 ```
 
 ## Available modules
 
 | Module | Summary |
-| --- | --- |
-| [account_currency_communication](account_currency_communication) |         Makes Configuration of Communication Standard on Currency possible. |
-| [account_followup_due_filter](account_followup_due_filter) |         Show only invoices that are due in the followup report. |
-| [account_followup_filter_blocked](account_followup_filter_blocked) |         Filter followup contacts with blocked invoices. |
-| [account_followup_mail_layout](account_followup_mail_layout) |         Use email layout for followup mails. |
-| [account_followup_manual_reminder](account_followup_manual_reminder) |         Set default reminder type on partner to manual. |
-| [account_followup_print_false](account_followup_print_false) |         Set print option to false in followup dialog. |
-| [account_followup_report_light](account_followup_report_light) |         Lighter layout for the followup report. |
-| [account_followup_subscribe](account_followup_subscribe) |         When sending followup mail subscribe contacts defined in template domain. |
-| [account_invoice_carrier](account_invoice_carrier) |         Set delivery method on invoice. |
-| [account_invoice_comment](account_invoice_comment) |         Comment field in invoice. |
-| [account_invoice_move_date](account_invoice_move_date) |         Set move date independent of invoice date. |
-| [account_invoice_notes](account_invoice_notes) |         Footer and header notes for invoice that are copied from sale order. |
-| [account_invoice_outstanding_credit](account_invoice_outstanding_credit) |         Filter customer invoices with open credits. |
-| [account_invoice_prepare](account_invoice_prepare) |         Store and load invoice pdf file from attachments. |
-| [account_invoice_sale_partner](account_invoice_sale_partner) |         Set sale order contact on invoice. |
-| [account_invoice_select_bank](account_invoice_select_bank) |         Select bank by matching currency of invoice. |
-| [account_move_invoice_partner](account_move_invoice_partner) |         Separate field for invoice address. |
-| [account_move_line_accounting_description_stock](account_move_line_accounting_description_stock) |         Copy stock move description to external name on invoice creation. |
-| [account_move_line_date_order](account_move_line_date_order) |     """, |
-| [account_move_line_position](account_move_line_position) |         Enable line position number and link from purchase or sale order. |
-| [account_move_post_warn](account_move_post_warn) |         When an invoice is posted show the warning message from the partner. |
-| [l10n_ch_disable_default_reports](l10n_ch_disable_default_reports) |         Disable QR and ISR report generation. |
-| [sale_invoice_carrier](sale_invoice_carrier) |         Set delivery method of transfer when creating invoice from sale order. |
-| [sale_invoice_cash_rounding_default](sale_invoice_cash_rounding_default) |         Apply default cash rounding when invoicing sale orders. |
-| [sale_invoice_ignore_ref](sale_invoice_ignore_ref) |         Ignore customer ref when invoicing sale orders. |
-| [sale_invoice_line_description](sale_invoice_line_description) |         When invoicing a sale order use product reference and name as line description. |
-| [sale_invoice_prepare_bank](sale_invoice_prepare_bank) |         Set bank on invoice by matching currency. |
-| [sale_invoice_prepare_partner](sale_invoice_prepare_partner) |         Copy invoice and shipping contacts to invoice. |
+| ------ | ------- |
+|        |         |
